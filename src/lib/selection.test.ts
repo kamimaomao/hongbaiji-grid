@@ -24,5 +24,6 @@ describe('selection helpers', () => {
     expect(getPosterTitle('')).toBe('我最喜欢的红白机游戏');
     expect(getPosterTitle('  阿明  ')).toBe('阿明最喜欢的红白机游戏');
     expect(getPosterTitle('abcdefghijklmnop')).toBe('abcdefghijkl最喜欢的红白机游戏');
+    expect(getPosterTitle('小林', '最喜欢的九部日本动漫')).toBe('小林最喜欢的九部日本动漫');
   });
 });

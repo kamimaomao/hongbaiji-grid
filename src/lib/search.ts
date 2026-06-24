@@ -1,6 +1,6 @@
 import type { FcGame, GameGenre } from '../types';
 
-export type DecadeFilter = 'all' | '1980s' | '1990s';
+export type DecadeFilter = 'all' | `${number}s`;
 export type SortMode = 'popularity' | 'year-asc' | 'year-desc' | 'title';
 
 export interface GameFilters {
@@ -23,8 +23,8 @@ const matchesQuery = (game: FcGame, query: string) => {
 
 const matchesDecade = (game: FcGame, decade: DecadeFilter = 'all') => {
   if (decade === 'all') return true;
-  if (decade === '1980s') return game.year >= 1980 && game.year <= 1989;
-  return game.year >= 1990 && game.year <= 1999;
+  const startYear = Number.parseInt(decade, 10);
+  return game.year >= startYear && game.year <= startYear + 9;
 };
 
 export const filterGames = (games: FcGame[], filters: GameFilters = {}) =>

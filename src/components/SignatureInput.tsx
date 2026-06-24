@@ -2,10 +2,11 @@ import { MAX_SIGNATURE_LENGTH, getPosterTitle } from '../lib/selection';
 
 interface SignatureInputProps {
   value: string;
+  titleSuffix: string;
   onChange: (value: string) => void;
 }
 
-export function SignatureInput({ value, onChange }: SignatureInputProps) {
+export function SignatureInput({ value, titleSuffix, onChange }: SignatureInputProps) {
   return (
     <section className="signature-card">
       <label htmlFor="signature">署名</label>
@@ -17,9 +18,9 @@ export function SignatureInput({ value, onChange }: SignatureInputProps) {
           placeholder="比如：阿明"
           onChange={(event) => onChange(event.target.value)}
         />
-        <span>最喜欢的红白机游戏</span>
+        <span>{titleSuffix}</span>
       </div>
-      <p>{getPosterTitle(value)}</p>
+      <p>{getPosterTitle(value, titleSuffix)}</p>
     </section>
   );
 }

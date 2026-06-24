@@ -1,15 +1,6 @@
-export type GameGenre =
-  | '动作'
-  | '冒险'
-  | '射击'
-  | '角色扮演'
-  | '益智'
-  | '体育'
-  | '竞速'
-  | '格斗'
-  | '策略';
+export type GameGenre = string;
 
-export interface FcGame {
+export interface CatalogItem {
   id: string;
   titleZh: string;
   titleOriginal: string;
@@ -21,6 +12,8 @@ export interface FcGame {
   imageUrl: string;
 }
 
+export type FcGame = CatalogItem;
+
 export interface SelectedGameSnapshot {
   id: string;
   titleZh: string;
@@ -31,3 +24,5 @@ export interface SelectedGameSnapshot {
 }
 
 export type GridSelection = Array<SelectedGameSnapshot | null>;
+
+export type CatalogMode = 'fc' | 'anime';

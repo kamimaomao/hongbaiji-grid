@@ -5,9 +5,11 @@ interface PosterOptions {
   signature: string;
   games: SelectedGameSnapshot[];
   siteLabel: string;
+  titleSuffix?: string;
+  brandLabel?: string;
 }
 
-export const buildPosterTitle = (signature: string) => getPosterTitle(signature);
+export const buildPosterTitle = (signature: string, titleSuffix?: string) => getPosterTitle(signature, titleSuffix);
 
 const loadImage = (src: string) =>
   new Promise<HTMLImageElement>((resolve, reject) => {
@@ -70,7 +72,13 @@ const drawImageContain = (
   context.drawImage(image, drawX, drawY, drawWidth, drawHeight);
 };
 
-export async function generatePosterDataUrl({ signature, games, siteLabel }: PosterOptions) {
+export async function generatePosterDataUrl({
+  signature,
+  games,
+  siteLabel,
+  titleSuffix,
+  brandLabel = 'FAMICOM NINE GRID',
+}: PosterOptions) {
   const canvas = document.createElement('canvas');
   canvas.width = 1080;
   canvas.height = 1440;
@@ -85,11 +93,11 @@ export async function generatePosterDataUrl({ signature, games, siteLabel }: Pos
 
   context.fillStyle = '#d49b6a';
   context.font = '700 36px sans-serif';
-  context.fillText('FAMICOM NINE GRID', 72, 96);
+  context.fillText(brandLabel, 72, 96);
 
   context.fillStyle = '#f8f0df';
   context.font = '900 82px sans-serif';
-  const titleLines = wrapText(context, buildPosterTitle(signature), 760);
+  const titleLines = wrapText(context, buildPosterTitle(signature, titleSuffix), 760);
   titleLines.forEach((line, index) => context.fillText(line, 72, 180 + index * 92));
 
   const images = await Promise.all(

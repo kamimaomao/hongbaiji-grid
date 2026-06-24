@@ -39,4 +39,22 @@ describe('App', () => {
 
     expect(screen.getByRole('button', { name: '已选择 魂斗罗' })).toBeDisabled();
   });
+
+  it('switches to anime mode and selects an anime entry', async () => {
+    const user = userEvent.setup();
+    render(<App />);
+
+    await user.click(screen.getByRole('button', { name: '日本动漫' }));
+    expect(screen.getByRole('heading', { name: '选出你最喜欢的九部日本动漫' })).toBeInTheDocument();
+    expect(screen.getByText('我最喜欢的九部日本动漫')).toBeInTheDocument();
+
+    await user.click(screen.getByRole('button', { name: '选择第 1 个日本动漫' }));
+    expect(screen.getByRole('dialog', { name: '选择日本动漫' })).toBeInTheDocument();
+
+    await user.type(screen.getByPlaceholderText('搜索中文名、英文名或别名'), '咒术回战');
+    await user.click(screen.getByRole('button', { name: '选择 咒术回战' }));
+
+    const firstSlot = screen.getByTestId('grid-slot-0');
+    expect(within(firstSlot).getByText('咒术回战')).toBeInTheDocument();
+  });
 });

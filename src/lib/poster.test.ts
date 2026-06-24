@@ -7,6 +7,7 @@ describe('poster generation', () => {
   it('builds the title used on the image', () => {
     expect(buildPosterTitle('阿明')).toBe('阿明最喜欢的红白机游戏');
     expect(buildPosterTitle('')).toBe('我最喜欢的红白机游戏');
+    expect(buildPosterTitle('小林', '最喜欢的九部日本动漫')).toBe('小林最喜欢的九部日本动漫');
   });
 
   it('returns a png data url when canvas is available', async () => {
@@ -39,6 +40,7 @@ describe('poster generation', () => {
       signature: '阿明',
       games: fcGames.slice(0, 9).map(toSnapshot),
       siteLabel: 'fc-grid.fun · 我也来选',
+      brandLabel: 'FAMICOM NINE GRID',
     });
 
     expect(image).toBe('data:image/png;base64,test');

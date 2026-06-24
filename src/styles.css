@@ -44,6 +44,33 @@ h1 {
   overflow-wrap: anywhere;
 }
 
+.mode-switch {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+  margin-top: 18px;
+  padding: 4px;
+  border: 1px solid #d7cbb9;
+  border-radius: 8px;
+  background: #fffaf2;
+}
+
+.mode-switch button {
+  min-width: 0;
+  border: 0;
+  border-radius: 6px;
+  padding: 10px 12px;
+  background: transparent;
+  color: #6f5b48;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.mode-switch button[aria-pressed="true"] {
+  background: #241f1a;
+  color: #fffaf2;
+}
+
 .signature-card,
 .generate-panel {
   min-width: 0;
@@ -270,6 +297,8 @@ h1 {
   padding: 8px;
   text-align: left;
   cursor: pointer;
+  content-visibility: auto;
+  contain-intrinsic-size: 210px;
   transition: border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
