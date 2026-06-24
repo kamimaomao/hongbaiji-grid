@@ -52,7 +52,7 @@ describe('App', () => {
     expect(screen.getByRole('dialog', { name: '选择日本动漫' })).toBeInTheDocument();
 
     await user.type(screen.getByPlaceholderText('搜索中文名、英文名或别名'), '咒术回战');
-    await user.click(screen.getByRole('button', { name: '选择 咒术回战' }));
+    await user.click(await screen.findByRole('button', { name: '选择 咒术回战' }));
 
     const firstSlot = screen.getByTestId('grid-slot-0');
     expect(within(firstSlot).getByText('咒术回战')).toBeInTheDocument();
