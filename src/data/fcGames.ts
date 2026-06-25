@@ -1,12 +1,6 @@
 import type { FcGame, GameGenre } from '../types';
 
-const BOXART_BASE = 'https://thumbnails.libretro.com/Nintendo%20-%20Nintendo%20Entertainment%20System/Named_Boxarts/';
-
-const boxArt = (fileName: string) =>
-  `${BOXART_BASE}${encodeURIComponent(fileName)
-    .replace(/'/g, '%27')
-    .replace(/\(/g, '%28')
-    .replace(/\)/g, '%29')}`;
+const boxArt = (id: string) => `${import.meta.env.BASE_URL}covers/fc/${id}.jpg`;
 
 const game = (
   id: string,
@@ -17,7 +11,7 @@ const game = (
   publisher: string,
   genre: GameGenre,
   popularity: number,
-  fileName: string,
+  _sourceFileName: string,
 ): FcGame => ({
   id,
   titleZh,
@@ -27,7 +21,7 @@ const game = (
   publisher,
   genre,
   popularity,
-  imageUrl: boxArt(fileName),
+  imageUrl: boxArt(id),
 });
 
 export const fcGames: FcGame[] = [

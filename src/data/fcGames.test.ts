@@ -1,6 +1,12 @@
 import { describe, expect, it } from 'vitest';
 import { fcGames } from './fcGames';
 
+const fcCoverIds = new Set(
+  Object.keys(import.meta.glob('../../public/covers/fc/*.jpg', { eager: true, query: '?url', import: 'default' }))
+    .map((assetPath) => assetPath.match(/\/([^/]+)\.jpg$/)?.[1])
+    .filter((id): id is string => Boolean(id)),
+);
+
 describe('fcGames catalog', () => {
   it('contains enough games for the first playable picker', () => {
     expect(fcGames.length).toBeGreaterThanOrEqual(100);
@@ -20,7 +26,8 @@ describe('fcGames catalog', () => {
       expect(game.year).toBeLessThanOrEqual(1994);
       expect(game.publisher.length).toBeGreaterThan(0);
       expect(game.genre.length).toBeGreaterThan(0);
-      expect(game.imageUrl.length).toBeGreaterThan(0);
+      expect(game.imageUrl).toContain(`/covers/fc/${game.id}.jpg`);
+      expect(fcCoverIds.has(game.id)).toBe(true);
     }
   });
 });
