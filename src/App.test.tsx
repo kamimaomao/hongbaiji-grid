@@ -14,7 +14,7 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: '选择第 1 个红白机游戏' }));
     expect(screen.getByRole('dialog', { name: '选择红白机游戏' })).toBeInTheDocument();
 
-    await user.type(screen.getByPlaceholderText('搜索中文名、英文名或别名'), '魂斗罗');
+    await user.type(screen.getByPlaceholderText('搜索名称或别名'), '魂斗罗');
     await user.click(screen.getByRole('button', { name: /选择 魂斗罗/ }));
 
     const firstSlot = screen.getByTestId('grid-slot-0');
@@ -31,11 +31,11 @@ describe('App', () => {
     render(<App />);
 
     await user.click(screen.getByRole('button', { name: '选择第 1 个红白机游戏' }));
-    await user.type(screen.getByPlaceholderText('搜索中文名、英文名或别名'), '魂斗罗');
+    await user.type(screen.getByPlaceholderText('搜索名称或别名'), '魂斗罗');
     await user.click(screen.getByRole('button', { name: '选择 魂斗罗' }));
 
     await user.click(screen.getByRole('button', { name: '选择第 2 个红白机游戏' }));
-    await user.type(screen.getByPlaceholderText('搜索中文名、英文名或别名'), '魂斗罗');
+    await user.type(screen.getByPlaceholderText('搜索名称或别名'), '魂斗罗');
 
     expect(screen.getByRole('button', { name: '已选择 魂斗罗' })).toBeDisabled();
   });
@@ -51,7 +51,7 @@ describe('App', () => {
     await user.click(screen.getByRole('button', { name: '选择第 1 个日本动漫' }));
     expect(screen.getByRole('dialog', { name: '选择日本动漫' })).toBeInTheDocument();
 
-    await user.type(screen.getByPlaceholderText('搜索中文名、英文名或别名'), '咒术回战');
+    await user.type(screen.getByPlaceholderText('搜索名称或别名'), '咒术回战');
     await user.click(await screen.findByRole('button', { name: '选择 咒术回战' }));
 
     const firstSlot = screen.getByTestId('grid-slot-0');

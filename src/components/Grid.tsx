@@ -28,7 +28,10 @@ export function Grid({ selection, gridLabel, slotItemLabel, onPickSlot }: GridPr
               <span className="grid-slot-title">{game.titleZh}</span>
             </>
           ) : (
-            <span className="slot-plus">+</span>
+            <>
+              <span className="slot-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
+              <span className="slot-plus">+</span>
+            </>
           )}
         </button>
       ))}

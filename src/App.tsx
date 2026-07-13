@@ -26,6 +26,7 @@ export default function App() {
   const genreOptions = useMemo(() => getGenreOptions(catalogItems), [catalogItems]);
   const decadeOptions = useMemo(() => getDecadeOptions(catalogItems), [catalogItems]);
   const complete = isGridComplete(selection);
+  const selectedCount = filledGames(selection).length;
   const unavailableGameIds = useMemo(
     () =>
       new Set(
@@ -82,35 +83,85 @@ export default function App() {
   };
 
   return (
-    <main className="app-shell">
-      <p className="eyebrow">{catalog.eyebrow}</p>
-      <h1>{catalog.heading}</h1>
-      <div className="mode-switch" aria-label="选择主题">
-        {Object.values(catalogConfigs).map((config) => (
-          <button
-            key={config.mode}
-            type="button"
-            aria-pressed={mode === config.mode}
-            onClick={() => handleModeChange(config.mode)}
-          >
-            {config.navLabel}
-          </button>
-        ))}
-      </div>
-      <SignatureInput value={signature} titleSuffix={catalog.titleSuffix} onChange={setSignature} />
-      <Grid
-        selection={selection}
-        gridLabel={catalog.gridLabel}
-        slotItemLabel={catalog.slotItemLabel}
-        onPickSlot={setActiveSlot}
-      />
-      <GeneratePanel
-        complete={complete && !isGenerating}
-        imageUrl={imageUrl}
-        downloadName={catalog.downloadName}
-        onGenerate={handleGenerate}
-      />
+    <main className={`app-shell theme-${mode}`}>
+      <header className="site-header">
+        <div className="site-header-inner">
+          <a className="brand" href="#editor" aria-label="九格回忆首页">
+            <span className="brand-mark" aria-hidden="true">3×3</span>
+            <span>九格回忆</span>
+          </a>
+          <a className="header-action" href="#workspace">开始制作</a>
+        </div>
+      </header>
+
+      <section className="editor-layout" id="editor">
+        <div className="project-intro">
+          <p className="eyebrow">NINE FAVORITES</p>
+          <h1 id="page-title">{catalog.heading}</h1>
+          <p className="hero-copy">选出九个真正喜欢的名字，生成一张属于你的九宫格。无需登录，完成后即可保存。</p>
+        </div>
+
+        <div className="workspace-grid" id="workspace">
+          <aside className="settings-panel" aria-label="九宫格设置">
+            <div className="panel-heading">
+              <p className="step-label">设置</p>
+              <h2>创建你的作品</h2>
+            </div>
+
+            <div className="setting-group">
+              <p className="setting-label">主题</p>
+              <div className="mode-switch" aria-label="选择九宫格主题">
+                {Object.values(catalogConfigs).map((config) => (
+                  <button
+                    key={config.mode}
+                    type="button"
+                    aria-pressed={mode === config.mode}
+                    onClick={() => handleModeChange(config.mode)}
+                  >
+                    {config.navLabel}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            <SignatureInput value={signature} titleSuffix={catalog.titleSuffix} onChange={setSignature} />
+
+            <div className="privacy-card">
+              <span className="privacy-symbol" aria-hidden="true">✓</span>
+              <div>
+                <strong>你的选择只留在这里</strong>
+                <p>不创建账号，也不会上传你的九宫格。</p>
+              </div>
+            </div>
+          </aside>
+
+          <section className="grid-panel" aria-label="九宫格编辑区">
+            <div className="section-heading">
+              <div>
+                <p className="step-label">你的九宫格</p>
+                <h2>{selectedCount === 0 ? '点击任意格子开始选择' : '继续填满你的九个心头好'}</h2>
+              </div>
+              <span className="selection-count" aria-live="polite">已选 {selectedCount} / 9</span>
+            </div>
+
+            <Grid
+              selection={selection}
+              gridLabel={catalog.gridLabel}
+              slotItemLabel={catalog.slotItemLabel}
+              onPickSlot={setActiveSlot}
+            />
+            <GeneratePanel
+              complete={complete && !isGenerating}
+              imageUrl={imageUrl}
+              downloadName={catalog.downloadName}
+              onGenerate={handleGenerate}
+            />
+          </section>
+        </div>
+      </section>
+
       <GamePicker
+        key={`${mode}-${activeSlot ?? 'closed'}`}
         open={activeSlot !== null}
         items={catalogItems}
         title={catalog.pickerTitle}
@@ -120,6 +171,7 @@ export default function App() {
         onClose={() => setActiveSlot(null)}
         onSelect={handleSelectGame}
       />
+      <footer><span>九格回忆</span><span>为你喜欢的事物，留一个位置。</span></footer>
     </main>
   );
 }

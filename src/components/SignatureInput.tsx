@@ -20,7 +20,10 @@ export function SignatureInput({ value, titleSuffix, onChange }: SignatureInputP
         />
         <span>{titleSuffix}</span>
       </div>
-      <p>{getPosterTitle(value, titleSuffix)}</p>
+      <div className="signature-preview">
+        <p>{getPosterTitle(value, titleSuffix)}</p>
+        <span>{value.length}/{MAX_SIGNATURE_LENGTH}</span>
+      </div>
     </section>
   );
 }

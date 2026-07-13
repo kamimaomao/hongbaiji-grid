@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FilterOption } from '../data/catalogs';
 import { filterGames, sortGames, type DecadeFilter, type SortMode } from '../lib/search';
 import type { FcGame, GameGenre } from '../types';
@@ -28,15 +28,24 @@ export function GamePicker({
   const [genre, setGenre] = useState<GameGenre | 'all'>('all');
   const [decade, setDecade] = useState<DecadeFilter>('all');
   const [sort, setSort] = useState<SortMode>('popularity');
+  const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (open) {
-      setQuery('');
-      setGenre('all');
-      setDecade('all');
-      setSort('popularity');
-    }
-  }, [open]);
+    if (!open) return;
+    const previouslyFocused = document.activeElement instanceof HTMLElement ? document.activeElement : null;
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') onClose();
+    };
+    const focusFrame = requestAnimationFrame(() => searchRef.current?.focus());
+    document.addEventListener('keydown', handleKeyDown);
+    document.body.style.overflow = 'hidden';
+    return () => {
+      cancelAnimationFrame(focusFrame);
+      document.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = '';
+      previouslyFocused?.focus();
+    };
+  }, [onClose, open]);
 
   const games = useMemo(() => {
     const filtered = filterGames(items, { query, genre, decade });
@@ -46,45 +55,52 @@ export function GamePicker({
   if (!open) return null;
 
   return (
-    <div className="modal-backdrop">
-      <section className="picker" role="dialog" aria-modal="true" aria-label={title}>
-        <div className="picker-header">
-          <h2>{title}</h2>
-          <button type="button" onClick={onClose}>
-            关闭
-          </button>
-        </div>
+    <div className="modal-backdrop" onMouseDown={(event) => event.currentTarget === event.target && onClose()}>
+      <section className="picker" role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => event.stopPropagation()}>
+        <div className="picker-controls">
+          <div className="picker-header">
+            <div>
+              <p>选择内容</p>
+              <h2>{title}</h2>
+            </div>
+            <button type="button" onClick={onClose} aria-label="关闭选择器">
+              完成
+            </button>
+          </div>
 
-        <input
-          className="search-input"
-          value={query}
-          placeholder="搜索中文名、英文名或别名"
-          onChange={(event) => setQuery(event.target.value)}
-        />
+          <input
+            ref={searchRef}
+            className="search-input"
+            aria-label="搜索名称或别名"
+            value={query}
+            placeholder="搜索名称或别名"
+            onChange={(event) => setQuery(event.target.value)}
+          />
 
-        <div className="filters">
-          <select aria-label="类型" value={genre} onChange={(event) => setGenre(event.target.value as GameGenre | 'all')}>
-            <option value="all">全部类型</option>
-            {genreOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-          <select aria-label="年代" value={decade} onChange={(event) => setDecade(event.target.value as DecadeFilter)}>
-            <option value="all">全部年代</option>
-            {decadeOptions.map((option) => (
-              <option key={option.value} value={option.value}>
-                {option.label}
-              </option>
-            ))}
-          </select>
-          <select aria-label="排序" value={sort} onChange={(event) => setSort(event.target.value as SortMode)}>
-            <option value="popularity">热度</option>
-            <option value="year-asc">年份从早到晚</option>
-            <option value="year-desc">年份从晚到早</option>
-            <option value="title">中文名</option>
-          </select>
+          <div className="filters">
+            <select aria-label="类型" value={genre} onChange={(event) => setGenre(event.target.value as GameGenre | 'all')}>
+              <option value="all">全部类型</option>
+              {genreOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <select aria-label="年代" value={decade} onChange={(event) => setDecade(event.target.value as DecadeFilter)}>
+              <option value="all">全部年代</option>
+              {decadeOptions.map((option) => (
+                <option key={option.value} value={option.value}>
+                  {option.label}
+                </option>
+              ))}
+            </select>
+            <select aria-label="排序" value={sort} onChange={(event) => setSort(event.target.value as SortMode)}>
+              <option value="popularity">按热度排序</option>
+              <option value="year-asc">年份从早到晚</option>
+              <option value="year-desc">年份从晚到早</option>
+              <option value="title">按中文名排序</option>
+            </select>
+          </div>
         </div>
 
         <div className="game-list">
@@ -111,6 +127,7 @@ export function GamePicker({
             );
           })}
         </div>
+        <p className="result-count">找到 {games.length} 个结果</p>
       </section>
     </div>
   );
