@@ -1,12 +1,14 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FilterOption } from '../data/catalogs';
 import { filterGames, sortGames, type DecadeFilter, type SortMode } from '../lib/search';
-import type { FcGame, GameGenre } from '../types';
+import type { CollectionVariant, FcGame, GameGenre } from '../types';
 
 interface GamePickerProps {
   open: boolean;
   items: FcGame[];
   title: string;
+  variant?: 'default' | 'music' | 'drama' | CollectionVariant;
+  initialGenre?: GameGenre | 'all';
   genreOptions: FilterOption[];
   decadeOptions: FilterOption[];
   unavailableGameIds: Set<string>;
@@ -18,6 +20,8 @@ export function GamePicker({
   open,
   items,
   title,
+  variant = 'default',
+  initialGenre = 'all',
   genreOptions,
   decadeOptions,
   unavailableGameIds,
@@ -25,7 +29,7 @@ export function GamePicker({
   onSelect,
 }: GamePickerProps) {
   const [query, setQuery] = useState('');
-  const [genre, setGenre] = useState<GameGenre | 'all'>('all');
+  const [genre, setGenre] = useState<GameGenre | 'all'>(initialGenre);
   const [decade, setDecade] = useState<DecadeFilter>('all');
   const [sort, setSort] = useState<SortMode>('popularity');
   const searchRef = useRef<HTMLInputElement>(null);
@@ -56,7 +60,7 @@ export function GamePicker({
 
   return (
     <div className="modal-backdrop" onMouseDown={(event) => event.currentTarget === event.target && onClose()}>
-      <section className="picker" role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => event.stopPropagation()}>
+      <section className={`picker picker-${variant}`} role="dialog" aria-modal="true" aria-label={title} onMouseDown={(event) => event.stopPropagation()}>
         <div className="picker-controls">
           <div className="picker-header">
             <div>

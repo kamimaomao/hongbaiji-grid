@@ -1,0 +1,1636 @@
+{
+  "movie": [
+    {
+      "id": "movie-inception",
+      "titleZh": "盗梦空间",
+      "titleOriginal": "Inception",
+      "aliases": [
+        "盗梦空间电影"
+      ],
+      "year": 2010,
+      "publisher": "华纳兄弟",
+      "genre": "科幻",
+      "popularity": 2000,
+      "imagePath": "covers/movie/inception.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Inception"
+    },
+    {
+      "id": "movie-shawshank",
+      "titleZh": "肖申克的救赎",
+      "titleOriginal": "The Shawshank Redemption",
+      "aliases": [
+        "刺激1995"
+      ],
+      "year": 1994,
+      "publisher": "哥伦比亚影业",
+      "genre": "剧情",
+      "popularity": 1980,
+      "imagePath": "covers/movie/shawshank.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Shawshank_Redemption"
+    },
+    {
+      "id": "movie-forrest-gump",
+      "titleZh": "阿甘正传",
+      "titleOriginal": "Forrest Gump",
+      "aliases": [
+        "阿甘"
+      ],
+      "year": 1994,
+      "publisher": "派拉蒙",
+      "genre": "剧情",
+      "popularity": 1970,
+      "imagePath": "covers/movie/forrest-gump.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Forrest_Gump"
+    },
+    {
+      "id": "movie-godfather",
+      "titleZh": "教父",
+      "titleOriginal": "The Godfather",
+      "aliases": [
+        "教父1"
+      ],
+      "year": 1972,
+      "publisher": "派拉蒙",
+      "genre": "犯罪",
+      "popularity": 1960,
+      "imagePath": "covers/movie/godfather.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Godfather"
+    },
+    {
+      "id": "movie-pulp-fiction",
+      "titleZh": "低俗小说",
+      "titleOriginal": "Pulp Fiction",
+      "aliases": [
+        "黑色追缉令"
+      ],
+      "year": 1994,
+      "publisher": "米拉麦克斯",
+      "genre": "犯罪",
+      "popularity": 1950,
+      "imagePath": "covers/movie/pulp-fiction.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pulp_Fiction"
+    },
+    {
+      "id": "movie-spirited-away",
+      "titleZh": "千与千寻",
+      "titleOriginal": "Spirited Away",
+      "aliases": [
+        "神隐少女"
+      ],
+      "year": 2001,
+      "publisher": "吉卜力工作室",
+      "genre": "动画",
+      "popularity": 1940,
+      "imagePath": "covers/movie/spirited-away.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Spirited_Away"
+    },
+    {
+      "id": "movie-farewell-concubine",
+      "titleZh": "霸王别姬",
+      "titleOriginal": "Farewell My Concubine",
+      "aliases": [
+        "霸王别姬电影"
+      ],
+      "year": 1993,
+      "publisher": "汤臣电影",
+      "genre": "剧情",
+      "popularity": 1930,
+      "imagePath": "covers/movie/farewell-concubine.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Farewell_My_Concubine_(film)"
+    },
+    {
+      "id": "movie-infernal-affairs",
+      "titleZh": "无间道",
+      "titleOriginal": "Infernal Affairs",
+      "aliases": [
+        "无间道1"
+      ],
+      "year": 2002,
+      "publisher": "寰亚电影",
+      "genre": "犯罪",
+      "popularity": 1920,
+      "imagePath": "covers/movie/infernal-affairs.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Infernal_Affairs"
+    },
+    {
+      "id": "movie-chungking-express",
+      "titleZh": "重庆森林",
+      "titleOriginal": "Chungking Express",
+      "aliases": [
+        "重庆森林电影"
+      ],
+      "year": 1994,
+      "publisher": "泽东电影",
+      "genre": "爱情",
+      "popularity": 1910,
+      "imagePath": "covers/movie/chungking-express.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Chungking_Express"
+    },
+    {
+      "id": "movie-yi-yi",
+      "titleZh": "一一",
+      "titleOriginal": "Yi Yi",
+      "aliases": [
+        "一一电影"
+      ],
+      "year": 2000,
+      "publisher": "原子映象",
+      "genre": "剧情",
+      "popularity": 1900,
+      "imagePath": "covers/movie/yi-yi.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Yi_Yi"
+    },
+    {
+      "id": "movie-brighter-summer-day",
+      "titleZh": "牯岭街少年杀人事件",
+      "titleOriginal": "A Brighter Summer Day",
+      "aliases": [
+        "牯岭街"
+      ],
+      "year": 1991,
+      "publisher": "杨德昌电影",
+      "genre": "剧情",
+      "popularity": 1890,
+      "imagePath": "covers/movie/brighter-summer-day.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/A_Brighter_Summer_Day"
+    },
+    {
+      "id": "movie-parasite",
+      "titleZh": "寄生虫",
+      "titleOriginal": "Parasite",
+      "aliases": [
+        "寄生上流"
+      ],
+      "year": 2019,
+      "publisher": "CJ娱乐",
+      "genre": "剧情",
+      "popularity": 1880,
+      "imagePath": "covers/movie/parasite.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Parasite_(2019_film)"
+    },
+    {
+      "id": "movie-matrix",
+      "titleZh": "黑客帝国",
+      "titleOriginal": "The Matrix",
+      "aliases": [
+        "骇客任务"
+      ],
+      "year": 1999,
+      "publisher": "华纳兄弟",
+      "genre": "科幻",
+      "popularity": 1870,
+      "imagePath": "covers/movie/matrix.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Matrix"
+    },
+    {
+      "id": "movie-alien",
+      "titleZh": "异形",
+      "titleOriginal": "Alien",
+      "aliases": [
+        "异形1"
+      ],
+      "year": 1979,
+      "publisher": "二十世纪福克斯",
+      "genre": "科幻",
+      "popularity": 1860,
+      "imagePath": "covers/movie/alien.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Alien_(film)"
+    },
+    {
+      "id": "movie-blade-runner-2049",
+      "titleZh": "银翼杀手2049",
+      "titleOriginal": "Blade Runner 2049",
+      "aliases": [
+        "银翼杀手续集"
+      ],
+      "year": 2017,
+      "publisher": "华纳兄弟",
+      "genre": "科幻",
+      "popularity": 1850,
+      "imagePath": "covers/movie/blade-runner-2049.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Blade_Runner_2049"
+    },
+    {
+      "id": "movie-mad-max-fury-road",
+      "titleZh": "疯狂的麦克斯：狂暴之路",
+      "titleOriginal": "Mad Max: Fury Road",
+      "aliases": [
+        "狂暴之路"
+      ],
+      "year": 2015,
+      "publisher": "华纳兄弟",
+      "genre": "动作",
+      "popularity": 1840,
+      "imagePath": "covers/movie/mad-max-fury-road.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mad_Max%3A_Fury_Road"
+    },
+    {
+      "id": "movie-la-la-land",
+      "titleZh": "爱乐之城",
+      "titleOriginal": "La La Land",
+      "aliases": [
+        "星声梦里人"
+      ],
+      "year": 2016,
+      "publisher": "狮门影业",
+      "genre": "爱情",
+      "popularity": 1820,
+      "imagePath": "covers/movie/la-la-land.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/La_La_Land"
+    },
+    {
+      "id": "movie-cinema-paradiso",
+      "titleZh": "天堂电影院",
+      "titleOriginal": "Cinema Paradiso",
+      "aliases": [
+        "新天堂乐园"
+      ],
+      "year": 1988,
+      "publisher": "米拉麦克斯",
+      "genre": "剧情",
+      "popularity": 1810,
+      "imagePath": "covers/movie/cinema-paradiso.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cinema_Paradiso"
+    },
+    {
+      "id": "movie-life-is-beautiful",
+      "titleZh": "美丽人生",
+      "titleOriginal": "Life Is Beautiful",
+      "aliases": [
+        "一个快乐的传说"
+      ],
+      "year": 1997,
+      "publisher": "米拉麦克斯",
+      "genre": "剧情",
+      "popularity": 1800,
+      "imagePath": "covers/movie/life-is-beautiful.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Life_Is_Beautiful"
+    },
+    {
+      "id": "movie-truman-show",
+      "titleZh": "楚门的世界",
+      "titleOriginal": "The Truman Show",
+      "aliases": [
+        "真人世界"
+      ],
+      "year": 1998,
+      "publisher": "派拉蒙",
+      "genre": "剧情",
+      "popularity": 1790,
+      "imagePath": "covers/movie/truman-show.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Truman_Show"
+    },
+    {
+      "id": "movie-coco",
+      "titleZh": "寻梦环游记",
+      "titleOriginal": "Coco",
+      "aliases": [
+        "玩转极乐园"
+      ],
+      "year": 2017,
+      "publisher": "皮克斯",
+      "genre": "动画",
+      "popularity": 1780,
+      "imagePath": "covers/movie/coco.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Coco_(2017_film)"
+    },
+    {
+      "id": "movie-dune-part-two",
+      "titleZh": "沙丘2",
+      "titleOriginal": "Dune: Part Two",
+      "aliases": [
+        "沙丘第二部"
+      ],
+      "year": 2024,
+      "publisher": "华纳兄弟",
+      "genre": "科幻",
+      "popularity": 1770,
+      "imagePath": "covers/movie/dune-part-two.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dune%3A_Part_Two"
+    }
+  ],
+  "classicDrama": [
+    {
+      "id": "classicDrama-meteor-garden",
+      "titleZh": "流星花园",
+      "titleOriginal": "Meteor Garden",
+      "aliases": [
+        "台湾流星花园"
+      ],
+      "year": 2001,
+      "publisher": "华视",
+      "genre": "青春爱情",
+      "popularity": 2000,
+      "imagePath": "covers/classic-drama/meteor-garden.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Meteor_Garden_(2001_TV_series)"
+    },
+    {
+      "id": "classicDrama-meteor-garden-2",
+      "titleZh": "流星花园Ⅱ",
+      "titleOriginal": "Meteor Garden II",
+      "aliases": [
+        "流星花园2"
+      ],
+      "year": 2002,
+      "publisher": "华视",
+      "genre": "青春爱情",
+      "popularity": 1990,
+      "imagePath": "covers/classic-drama/meteor-garden-2.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Meteor_Garden_II"
+    },
+    {
+      "id": "classicDrama-it-started-with-a-kiss",
+      "titleZh": "恶作剧之吻",
+      "titleOriginal": "It Started with a Kiss",
+      "aliases": [
+        "台版恶作剧之吻"
+      ],
+      "year": 2005,
+      "publisher": "中视",
+      "genre": "青春爱情",
+      "popularity": 1980,
+      "imagePath": "covers/classic-drama/it-started-with-a-kiss.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/It_Started_with_a_Kiss_(TV_series)"
+    },
+    {
+      "id": "classicDrama-they-kiss-again",
+      "titleZh": "恶作剧2吻",
+      "titleOriginal": "They Kiss Again",
+      "aliases": [
+        "恶作剧之吻2"
+      ],
+      "year": 2007,
+      "publisher": "中视",
+      "genre": "青春爱情",
+      "popularity": 1970,
+      "imagePath": "covers/classic-drama/they-kiss-again.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/They_Kiss_Again"
+    },
+    {
+      "id": "classicDrama-prince-frog",
+      "titleZh": "王子变青蛙",
+      "titleOriginal": "The Prince Who Turns into a Frog",
+      "aliases": [
+        "王子变青蛙电视剧"
+      ],
+      "year": 2005,
+      "publisher": "台视",
+      "genre": "偶像爱情",
+      "popularity": 1960,
+      "imagePath": "covers/classic-drama/prince-frog.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Prince_Who_Turns_into_a_Frog"
+    },
+    {
+      "id": "classicDrama-fated-love",
+      "titleZh": "命中注定我爱你",
+      "titleOriginal": "Fated to Love You",
+      "aliases": [
+        "台版命中注定我爱你"
+      ],
+      "year": 2008,
+      "publisher": "台视",
+      "genre": "偶像爱情",
+      "popularity": 1950,
+      "imagePath": "covers/classic-drama/fated-love.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fated_to_Love_You_(2008_TV_series)"
+    },
+    {
+      "id": "classicDrama-devil-beside-you",
+      "titleZh": "恶魔在身边",
+      "titleOriginal": "Devil Beside You",
+      "aliases": [
+        "恶魔在身边电视剧"
+      ],
+      "year": 2005,
+      "publisher": "中视",
+      "genre": "青春爱情",
+      "popularity": 1940,
+      "imagePath": "covers/classic-drama/devil-beside-you.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Devil_Beside_You"
+    },
+    {
+      "id": "classicDrama-smiling-pasta",
+      "titleZh": "微笑Pasta",
+      "titleOriginal": "Smiling Pasta",
+      "aliases": [
+        "微笑百事达"
+      ],
+      "year": 2006,
+      "publisher": "台视",
+      "genre": "青春爱情",
+      "popularity": 1930,
+      "imagePath": "covers/classic-drama/smiling-pasta.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Smiling_Pasta"
+    },
+    {
+      "id": "classicDrama-my-lucky-star",
+      "titleZh": "放羊的星星",
+      "titleOriginal": "My Lucky Star",
+      "aliases": [
+        "放羊的星星电视剧"
+      ],
+      "year": 2007,
+      "publisher": "台视",
+      "genre": "偶像爱情",
+      "popularity": 1920,
+      "imagePath": "covers/classic-drama/my-lucky-star.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/My_Lucky_Star_(TV_series)"
+    },
+    {
+      "id": "classicDrama-autumn-concerto",
+      "titleZh": "下一站，幸福",
+      "titleOriginal": "Autumn's Concerto",
+      "aliases": [
+        "下一站幸福"
+      ],
+      "year": 2009,
+      "publisher": "台视",
+      "genre": "偶像爱情",
+      "popularity": 1910,
+      "imagePath": "covers/classic-drama/autumn-concerto.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Autumn's_Concerto"
+    },
+    {
+      "id": "classicDrama-outsiders",
+      "titleZh": "斗鱼",
+      "titleOriginal": "The Outsiders",
+      "aliases": [
+        "斗鱼电视剧"
+      ],
+      "year": 2004,
+      "publisher": "八大电视",
+      "genre": "青春",
+      "popularity": 1900,
+      "imagePath": "covers/classic-drama/outsiders.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Outsiders_(Taiwanese_TV_series)"
+    },
+    {
+      "id": "classicDrama-corner-love",
+      "titleZh": "转角遇到爱",
+      "titleOriginal": "Corner with Love",
+      "aliases": [
+        "转角遇到爱电视剧"
+      ],
+      "year": 2007,
+      "publisher": "中视",
+      "genre": "偶像爱情",
+      "popularity": 1870,
+      "imagePath": "covers/classic-drama/corner-love.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Corner_with_Love"
+    },
+    {
+      "id": "classicDrama-romantic-princess",
+      "titleZh": "公主小妹",
+      "titleOriginal": "Romantic Princess",
+      "aliases": [
+        "公主小妹电视剧"
+      ],
+      "year": 2007,
+      "publisher": "中视",
+      "genre": "偶像爱情",
+      "popularity": 1860,
+      "imagePath": "covers/classic-drama/romantic-princess.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Romantic_Princess"
+    },
+    {
+      "id": "classicDrama-bull-fighting",
+      "titleZh": "斗牛，要不要",
+      "titleOriginal": "Bull Fighting",
+      "aliases": [
+        "斗牛要不要"
+      ],
+      "year": 2007,
+      "publisher": "台视",
+      "genre": "青春爱情",
+      "popularity": 1850,
+      "imagePath": "covers/classic-drama/bull-fighting.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bull_Fighting_(TV_series)"
+    },
+    {
+      "id": "classicDrama-black-white",
+      "titleZh": "痞子英雄",
+      "titleOriginal": "Black & White",
+      "aliases": [
+        "痞子英雄电视剧"
+      ],
+      "year": 2009,
+      "publisher": "公视",
+      "genre": "动作",
+      "popularity": 1840,
+      "imagePath": "covers/classic-drama/black-white.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Black_%26_White_(TV_series)"
+    },
+    {
+      "id": "classicDrama-in-time-with-you",
+      "titleZh": "我可能不会爱你",
+      "titleOriginal": "In Time with You",
+      "aliases": [
+        "我可能不会爱你台剧"
+      ],
+      "year": 2011,
+      "publisher": "民视",
+      "genre": "都市爱情",
+      "popularity": 1830,
+      "imagePath": "covers/classic-drama/in-time-with-you.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/In_Time_with_You"
+    },
+    {
+      "id": "classicDrama-fierce-wife",
+      "titleZh": "犀利人妻",
+      "titleOriginal": "The Fierce Wife",
+      "aliases": [
+        "犀利人妻电视剧"
+      ],
+      "year": 2010,
+      "publisher": "台视",
+      "genre": "都市爱情",
+      "popularity": 1820,
+      "imagePath": "covers/classic-drama/fierce-wife.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Fierce_Wife"
+    },
+    {
+      "id": "classicDrama-hi-sweetheart",
+      "titleZh": "海派甜心",
+      "titleOriginal": "Hi My Sweetheart",
+      "aliases": [
+        "海派甜心电视剧"
+      ],
+      "year": 2009,
+      "publisher": "华视",
+      "genre": "偶像爱情",
+      "popularity": 1800,
+      "imagePath": "covers/classic-drama/hi-sweetheart.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hi_My_Sweetheart"
+    },
+    {
+      "id": "classicDrama-miss-no-good",
+      "titleZh": "不良笑花",
+      "titleOriginal": "Miss No Good",
+      "aliases": [
+        "不良笑花电视剧"
+      ],
+      "year": 2008,
+      "publisher": "华视",
+      "genre": "偶像喜剧",
+      "popularity": 1790,
+      "imagePath": "covers/classic-drama/miss-no-good.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Miss_No_Good"
+    },
+    {
+      "id": "classicDrama-why-why-love",
+      "titleZh": "换换爱",
+      "titleOriginal": "Why Why Love",
+      "aliases": [
+        "换换爱电视剧"
+      ],
+      "year": 2007,
+      "publisher": "华视",
+      "genre": "偶像爱情",
+      "popularity": 1770,
+      "imagePath": "covers/classic-drama/why-why-love.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Why_Why_Love"
+    }
+  ],
+  "pc": [
+    {
+      "id": "pc-warcraft-3",
+      "titleZh": "魔兽争霸Ⅲ",
+      "titleOriginal": "Warcraft III: Reign of Chaos",
+      "aliases": [
+        "魔兽争霸3"
+      ],
+      "year": 2002,
+      "publisher": "暴雪娱乐",
+      "genre": "即时战略",
+      "popularity": 2000,
+      "imagePath": "covers/pc/warcraft-3.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Warcraft_III%3A_Reign_of_Chaos"
+    },
+    {
+      "id": "pc-diablo-2",
+      "titleZh": "暗黑破坏神Ⅱ",
+      "titleOriginal": "Diablo II",
+      "aliases": [
+        "暗黑2"
+      ],
+      "year": 2000,
+      "publisher": "暴雪娱乐",
+      "genre": "动作角色扮演",
+      "popularity": 1980,
+      "imagePath": "covers/pc/diablo-2.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Diablo_II"
+    },
+    {
+      "id": "pc-age-of-empires-2",
+      "titleZh": "帝国时代Ⅱ",
+      "titleOriginal": "Age of Empires II",
+      "aliases": [
+        "帝国时代2"
+      ],
+      "year": 1999,
+      "publisher": "微软游戏工作室",
+      "genre": "即时战略",
+      "popularity": 1970,
+      "imagePath": "covers/pc/age-of-empires-2.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Age_of_Empires_II"
+    },
+    {
+      "id": "pc-half-life-2",
+      "titleZh": "半衰期2",
+      "titleOriginal": "Half-Life 2",
+      "aliases": [
+        "半条命2"
+      ],
+      "year": 2004,
+      "publisher": "Valve",
+      "genre": "射击",
+      "popularity": 1950,
+      "imagePath": "covers/pc/half-life-2.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Half-Life_2"
+    },
+    {
+      "id": "pc-the-sims",
+      "titleZh": "模拟人生",
+      "titleOriginal": "The Sims",
+      "aliases": [
+        "模拟市民"
+      ],
+      "year": 2000,
+      "publisher": "艺电",
+      "genre": "模拟",
+      "popularity": 1940,
+      "imagePath": "covers/pc/the-sims.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Sims_(video_game)"
+    },
+    {
+      "id": "pc-simcity-4",
+      "titleZh": "模拟城市4",
+      "titleOriginal": "SimCity 4",
+      "aliases": [
+        "模拟城市"
+      ],
+      "year": 2003,
+      "publisher": "艺电",
+      "genre": "模拟",
+      "popularity": 1930,
+      "imagePath": "covers/pc/simcity-4.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/SimCity_4"
+    },
+    {
+      "id": "pc-civilization-6",
+      "titleZh": "文明Ⅵ",
+      "titleOriginal": "Civilization VI",
+      "aliases": [
+        "文明6"
+      ],
+      "year": 2016,
+      "publisher": "2K",
+      "genre": "策略",
+      "popularity": 1920,
+      "imagePath": "covers/pc/civilization-6.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Civilization_VI"
+    },
+    {
+      "id": "pc-world-of-warcraft",
+      "titleZh": "魔兽世界",
+      "titleOriginal": "World of Warcraft",
+      "aliases": [
+        "WOW"
+      ],
+      "year": 2004,
+      "publisher": "暴雪娱乐",
+      "genre": "网络游戏",
+      "popularity": 1910,
+      "imagePath": "covers/pc/world-of-warcraft.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/World_of_Warcraft"
+    },
+    {
+      "id": "pc-league-of-legends",
+      "titleZh": "英雄联盟",
+      "titleOriginal": "League of Legends",
+      "aliases": [
+        "LOL"
+      ],
+      "year": 2009,
+      "publisher": "Riot Games",
+      "genre": "竞技",
+      "popularity": 1900,
+      "imagePath": "covers/pc/league-of-legends.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/League_of_Legends"
+    },
+    {
+      "id": "pc-dota-2",
+      "titleZh": "Dota 2",
+      "titleOriginal": "Dota 2",
+      "aliases": [
+        "刀塔2"
+      ],
+      "year": 2013,
+      "publisher": "Valve",
+      "genre": "竞技",
+      "popularity": 1890,
+      "imagePath": "covers/pc/dota-2.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dota_2"
+    },
+    {
+      "id": "pc-terraria",
+      "titleZh": "泰拉瑞亚",
+      "titleOriginal": "Terraria",
+      "aliases": [
+        "泰拉"
+      ],
+      "year": 2011,
+      "publisher": "Re-Logic",
+      "genre": "沙盒",
+      "popularity": 1870,
+      "imagePath": "covers/pc/terraria.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Terraria"
+    },
+    {
+      "id": "pc-stardew-valley",
+      "titleZh": "星露谷物语",
+      "titleOriginal": "Stardew Valley",
+      "aliases": [
+        "星露谷"
+      ],
+      "year": 2016,
+      "publisher": "ConcernedApe",
+      "genre": "模拟",
+      "popularity": 1860,
+      "imagePath": "covers/pc/stardew-valley.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Stardew_Valley"
+    },
+    {
+      "id": "pc-portal-2",
+      "titleZh": "传送门2",
+      "titleOriginal": "Portal 2",
+      "aliases": [
+        "Portal 2"
+      ],
+      "year": 2011,
+      "publisher": "Valve",
+      "genre": "益智",
+      "popularity": 1850,
+      "imagePath": "covers/pc/portal-2.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Portal_2"
+    },
+    {
+      "id": "pc-disco-elysium",
+      "titleZh": "极乐迪斯科",
+      "titleOriginal": "Disco Elysium",
+      "aliases": [
+        "迪斯科极乐"
+      ],
+      "year": 2019,
+      "publisher": "ZA/UM",
+      "genre": "角色扮演",
+      "popularity": 1840,
+      "imagePath": "covers/pc/disco-elysium.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Disco_Elysium"
+    },
+    {
+      "id": "pc-baldurs-gate-3",
+      "titleZh": "博德之门3",
+      "titleOriginal": "Baldur's Gate 3",
+      "aliases": [
+        "博德3"
+      ],
+      "year": 2023,
+      "publisher": "Larian Studios",
+      "genre": "角色扮演",
+      "popularity": 1830,
+      "imagePath": "covers/pc/baldurs-gate-3.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Baldur's_Gate_3"
+    },
+    {
+      "id": "pc-witcher-3",
+      "titleZh": "巫师3：狂猎",
+      "titleOriginal": "The Witcher 3: Wild Hunt",
+      "aliases": [
+        "巫师3"
+      ],
+      "year": 2015,
+      "publisher": "CD Projekt",
+      "genre": "角色扮演",
+      "popularity": 1820,
+      "imagePath": "covers/pc/witcher-3.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Witcher_3%3A_Wild_Hunt"
+    },
+    {
+      "id": "pc-cyberpunk-2077",
+      "titleZh": "赛博朋克2077",
+      "titleOriginal": "Cyberpunk 2077",
+      "aliases": [
+        "2077"
+      ],
+      "year": 2020,
+      "publisher": "CD Projekt",
+      "genre": "角色扮演",
+      "popularity": 1810,
+      "imagePath": "covers/pc/cyberpunk-2077.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cyberpunk_2077"
+    },
+    {
+      "id": "pc-red-dead-2",
+      "titleZh": "荒野大镖客：救赎2",
+      "titleOriginal": "Red Dead Redemption 2",
+      "aliases": [
+        "大表哥2"
+      ],
+      "year": 2018,
+      "publisher": "Rockstar Games",
+      "genre": "动作冒险",
+      "popularity": 1800,
+      "imagePath": "covers/pc/red-dead-2.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Red_Dead_Redemption_2"
+    },
+    {
+      "id": "pc-elden-ring",
+      "titleZh": "艾尔登法环",
+      "titleOriginal": "Elden Ring",
+      "aliases": [
+        "老头环"
+      ],
+      "year": 2022,
+      "publisher": "FromSoftware",
+      "genre": "动作角色扮演",
+      "popularity": 1790,
+      "imagePath": "covers/pc/elden-ring.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Elden_Ring"
+    },
+    {
+      "id": "pc-hades",
+      "titleZh": "哈迪斯",
+      "titleOriginal": "Hades",
+      "aliases": [
+        "黑帝斯"
+      ],
+      "year": 2020,
+      "publisher": "Supergiant Games",
+      "genre": "动作",
+      "popularity": 1780,
+      "imagePath": "covers/pc/hades.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hades"
+    },
+    {
+      "id": "pc-hollow-knight",
+      "titleZh": "空洞骑士",
+      "titleOriginal": "Hollow Knight",
+      "aliases": [
+        "空洞"
+      ],
+      "year": 2017,
+      "publisher": "Team Cherry",
+      "genre": "动作冒险",
+      "popularity": 1770,
+      "imagePath": "covers/pc/hollow-knight.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Hollow_Knight"
+    },
+    {
+      "id": "pc-factorio",
+      "titleZh": "异星工厂",
+      "titleOriginal": "Factorio",
+      "aliases": [
+        "Factorio"
+      ],
+      "year": 2020,
+      "publisher": "Wube Software",
+      "genre": "模拟",
+      "popularity": 1760,
+      "imagePath": "covers/pc/factorio.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Factorio"
+    },
+    {
+      "id": "pc-cities-skylines",
+      "titleZh": "城市：天际线",
+      "titleOriginal": "Cities: Skylines",
+      "aliases": [
+        "都市天际线"
+      ],
+      "year": 2015,
+      "publisher": "Paradox Interactive",
+      "genre": "模拟",
+      "popularity": 1740,
+      "imagePath": "covers/pc/cities-skylines.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Cities%3A_Skylines"
+    },
+    {
+      "id": "pc-overwatch",
+      "titleZh": "守望先锋",
+      "titleOriginal": "Overwatch",
+      "aliases": [
+        "屁股"
+      ],
+      "year": 2016,
+      "publisher": "暴雪娱乐",
+      "genre": "射击",
+      "popularity": 1730,
+      "imagePath": "covers/pc/overwatch.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Overwatch"
+    },
+    {
+      "id": "pc-genshin",
+      "titleZh": "原神",
+      "titleOriginal": "Genshin Impact",
+      "aliases": [
+        "Genshin"
+      ],
+      "year": 2020,
+      "publisher": "米哈游",
+      "genre": "动作角色扮演",
+      "popularity": 1720,
+      "imagePath": "covers/pc/genshin.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Genshin_Impact"
+    },
+    {
+      "id": "pc-valorant",
+      "titleZh": "无畏契约",
+      "titleOriginal": "Valorant",
+      "aliases": [
+        "瓦罗兰特"
+      ],
+      "year": 2020,
+      "publisher": "Riot Games",
+      "genre": "射击",
+      "popularity": 1710,
+      "imagePath": "covers/pc/valorant.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Valorant"
+    }
+  ],
+  "console": [
+    {
+      "id": "console-god-of-war-ragnarok",
+      "titleZh": "战神：诸神黄昏",
+      "titleOriginal": "God of War Ragnarök",
+      "aliases": [
+        "战神5"
+      ],
+      "year": 2022,
+      "publisher": "Santa Monica Studio",
+      "genre": "动作冒险",
+      "popularity": 1990,
+      "imagePath": "covers/console/god-of-war-ragnarok.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/God_of_War_Ragnar%C3%B6k"
+    },
+    {
+      "id": "console-bloodborne",
+      "titleZh": "血源诅咒",
+      "titleOriginal": "Bloodborne",
+      "aliases": [
+        "血源"
+      ],
+      "year": 2015,
+      "publisher": "FromSoftware",
+      "genre": "动作角色扮演",
+      "popularity": 1980,
+      "imagePath": "covers/console/bloodborne.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bloodborne"
+    },
+    {
+      "id": "console-ghost-of-tsushima",
+      "titleZh": "对马岛之魂",
+      "titleOriginal": "Ghost of Tsushima",
+      "aliases": [
+        "对马岛"
+      ],
+      "year": 2020,
+      "publisher": "Sucker Punch",
+      "genre": "动作冒险",
+      "popularity": 1970,
+      "imagePath": "covers/console/ghost-of-tsushima.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ghost_of_Tsushima"
+    },
+    {
+      "id": "console-uncharted-4",
+      "titleZh": "神秘海域4",
+      "titleOriginal": "Uncharted 4: A Thief's End",
+      "aliases": [
+        "神海4"
+      ],
+      "year": 2016,
+      "publisher": "Naughty Dog",
+      "genre": "动作冒险",
+      "popularity": 1960,
+      "imagePath": "covers/console/uncharted-4.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Uncharted_4%3A_A_Thief's_End"
+    },
+    {
+      "id": "console-gran-turismo-7",
+      "titleZh": "跑车浪漫旅7",
+      "titleOriginal": "Gran Turismo 7",
+      "aliases": [
+        "GT7"
+      ],
+      "year": 2022,
+      "publisher": "Polyphony Digital",
+      "genre": "竞速",
+      "popularity": 1950,
+      "imagePath": "covers/console/gran-turismo-7.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gran_Turismo_7"
+    },
+    {
+      "id": "console-forza-horizon-5",
+      "titleZh": "极限竞速：地平线5",
+      "titleOriginal": "Forza Horizon 5",
+      "aliases": [
+        "地平线5"
+      ],
+      "year": 2021,
+      "publisher": "Playground Games",
+      "genre": "竞速",
+      "popularity": 1940,
+      "imagePath": "covers/console/forza-horizon-5.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Forza_Horizon_5"
+    },
+    {
+      "id": "console-halo-3",
+      "titleZh": "光环3",
+      "titleOriginal": "Halo 3",
+      "aliases": [
+        "光晕3"
+      ],
+      "year": 2007,
+      "publisher": "Bungie",
+      "genre": "射击",
+      "popularity": 1930,
+      "imagePath": "covers/console/halo-3.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Halo_3"
+    },
+    {
+      "id": "console-gears-of-war",
+      "titleZh": "战争机器",
+      "titleOriginal": "Gears of War",
+      "aliases": [
+        "战争机器1"
+      ],
+      "year": 2006,
+      "publisher": "Epic Games",
+      "genre": "射击",
+      "popularity": 1920,
+      "imagePath": "covers/console/gears-of-war.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gears_of_War_(video_game)"
+    },
+    {
+      "id": "console-zelda-botw",
+      "titleZh": "塞尔达传说：旷野之息",
+      "titleOriginal": "The Legend of Zelda: Breath of the Wild",
+      "aliases": [
+        "野炊"
+      ],
+      "year": 2017,
+      "publisher": "Nintendo",
+      "genre": "动作冒险",
+      "popularity": 1910,
+      "imagePath": "covers/console/zelda-botw.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/The_Legend_of_Zelda%3A_Breath_of_the_Wild"
+    },
+    {
+      "id": "console-mario-odyssey",
+      "titleZh": "超级马力欧：奥德赛",
+      "titleOriginal": "Super Mario Odyssey",
+      "aliases": [
+        "马里奥奥德赛"
+      ],
+      "year": 2017,
+      "publisher": "Nintendo",
+      "genre": "平台动作",
+      "popularity": 1900,
+      "imagePath": "covers/console/mario-odyssey.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Super_Mario_Odyssey"
+    },
+    {
+      "id": "console-animal-crossing",
+      "titleZh": "集合啦！动物森友会",
+      "titleOriginal": "Animal Crossing: New Horizons",
+      "aliases": [
+        "动森"
+      ],
+      "year": 2020,
+      "publisher": "Nintendo",
+      "genre": "模拟",
+      "popularity": 1890,
+      "imagePath": "covers/console/animal-crossing.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Animal_Crossing%3A_New_Horizons"
+    },
+    {
+      "id": "console-splatoon-3",
+      "titleZh": "斯普拉遁3",
+      "titleOriginal": "Splatoon 3",
+      "aliases": [
+        "喷射战士3"
+      ],
+      "year": 2022,
+      "publisher": "Nintendo",
+      "genre": "射击",
+      "popularity": 1880,
+      "imagePath": "covers/console/splatoon-3.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Splatoon_3"
+    },
+    {
+      "id": "console-metroid-prime",
+      "titleZh": "银河战士Prime",
+      "titleOriginal": "Metroid Prime",
+      "aliases": [
+        "密特罗德Prime"
+      ],
+      "year": 2002,
+      "publisher": "Retro Studios",
+      "genre": "动作冒险",
+      "popularity": 1870,
+      "imagePath": "covers/console/metroid-prime.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Metroid_Prime"
+    },
+    {
+      "id": "console-persona-5",
+      "titleZh": "女神异闻录5",
+      "titleOriginal": "Persona 5",
+      "aliases": [
+        "P5"
+      ],
+      "year": 2016,
+      "publisher": "Atlus",
+      "genre": "角色扮演",
+      "popularity": 1860,
+      "imagePath": "covers/console/persona-5.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Persona_5"
+    },
+    {
+      "id": "console-ff7-remake",
+      "titleZh": "最终幻想VII 重制版",
+      "titleOriginal": "Final Fantasy VII Remake",
+      "aliases": [
+        "FF7RE"
+      ],
+      "year": 2020,
+      "publisher": "Square Enix",
+      "genre": "角色扮演",
+      "popularity": 1850,
+      "imagePath": "covers/console/ff7-remake.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Final_Fantasy_VII_Remake"
+    },
+    {
+      "id": "console-monster-hunter-world",
+      "titleZh": "怪物猎人：世界",
+      "titleOriginal": "Monster Hunter: World",
+      "aliases": [
+        "怪猎世界"
+      ],
+      "year": 2018,
+      "publisher": "Capcom",
+      "genre": "动作角色扮演",
+      "popularity": 1840,
+      "imagePath": "covers/console/monster-hunter-world.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Monster_Hunter%3A_World"
+    },
+    {
+      "id": "console-shadow-colossus",
+      "titleZh": "旺达与巨像",
+      "titleOriginal": "Shadow of the Colossus",
+      "aliases": [
+        "汪达与巨像"
+      ],
+      "year": 2005,
+      "publisher": "Team Ico",
+      "genre": "动作冒险",
+      "popularity": 1830,
+      "imagePath": "covers/console/shadow-colossus.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Shadow_of_the_Colossus"
+    },
+    {
+      "id": "console-journey",
+      "titleZh": "风之旅人",
+      "titleOriginal": "Journey",
+      "aliases": [
+        "旅途"
+      ],
+      "year": 2012,
+      "publisher": "Thatgamecompany",
+      "genre": "冒险",
+      "popularity": 1820,
+      "imagePath": "covers/console/journey.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Journey_(2012_video_game)"
+    },
+    {
+      "id": "console-littlebigplanet",
+      "titleZh": "小小大星球",
+      "titleOriginal": "LittleBigPlanet",
+      "aliases": [
+        "LBP"
+      ],
+      "year": 2008,
+      "publisher": "Media Molecule",
+      "genre": "平台动作",
+      "popularity": 1810,
+      "imagePath": "covers/console/littlebigplanet.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/LittleBigPlanet"
+    },
+    {
+      "id": "console-metal-gear-solid-3",
+      "titleZh": "潜龙谍影3",
+      "titleOriginal": "Metal Gear Solid 3: Snake Eater",
+      "aliases": [
+        "合金装备3"
+      ],
+      "year": 2004,
+      "publisher": "Konami",
+      "genre": "潜入动作",
+      "popularity": 1800,
+      "imagePath": "covers/console/metal-gear-solid-3.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Metal_Gear_Solid_3%3A_Snake_Eater"
+    },
+    {
+      "id": "console-resident-evil-4",
+      "titleZh": "生化危机4",
+      "titleOriginal": "Resident Evil 4",
+      "aliases": [
+        "恶灵古堡4"
+      ],
+      "year": 2005,
+      "publisher": "Capcom",
+      "genre": "动作冒险",
+      "popularity": 1790,
+      "imagePath": "covers/console/resident-evil-4.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Resident_Evil_4"
+    },
+    {
+      "id": "console-street-fighter-6",
+      "titleZh": "街头霸王6",
+      "titleOriginal": "Street Fighter 6",
+      "aliases": [
+        "街霸6"
+      ],
+      "year": 2023,
+      "publisher": "Capcom",
+      "genre": "格斗",
+      "popularity": 1780,
+      "imagePath": "covers/console/street-fighter-6.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Street_Fighter_6"
+    },
+    {
+      "id": "console-tekken-8",
+      "titleZh": "铁拳8",
+      "titleOriginal": "Tekken 8",
+      "aliases": [
+        "铁拳八"
+      ],
+      "year": 2024,
+      "publisher": "Bandai Namco",
+      "genre": "格斗",
+      "popularity": 1770,
+      "imagePath": "covers/console/tekken-8.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tekken_8"
+    },
+    {
+      "id": "console-it-takes-two",
+      "titleZh": "双人成行",
+      "titleOriginal": "It Takes Two",
+      "aliases": [
+        "双人同行"
+      ],
+      "year": 2021,
+      "publisher": "Hazelight Studios",
+      "genre": "合作冒险",
+      "popularity": 1760,
+      "imagePath": "covers/console/it-takes-two.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/It_Takes_Two_(video_game)"
+    },
+    {
+      "id": "console-sekiro",
+      "titleZh": "只狼：影逝二度",
+      "titleOriginal": "Sekiro: Shadows Die Twice",
+      "aliases": [
+        "只狼"
+      ],
+      "year": 2019,
+      "publisher": "FromSoftware",
+      "genre": "动作冒险",
+      "popularity": 1750,
+      "imagePath": "covers/console/sekiro.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Sekiro%3A_Shadows_Die_Twice"
+    },
+    {
+      "id": "console-bayonetta-2",
+      "titleZh": "猎天使魔女2",
+      "titleOriginal": "Bayonetta 2",
+      "aliases": [
+        "贝优妮塔2"
+      ],
+      "year": 2014,
+      "publisher": "PlatinumGames",
+      "genre": "动作",
+      "popularity": 1740,
+      "imagePath": "covers/console/bayonetta-2.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Bayonetta_2"
+    },
+    {
+      "id": "console-fire-emblem-three-houses",
+      "titleZh": "火焰纹章：风花雪月",
+      "titleOriginal": "Fire Emblem: Three Houses",
+      "aliases": [
+        "风花雪月"
+      ],
+      "year": 2019,
+      "publisher": "Intelligent Systems",
+      "genre": "策略角色扮演",
+      "popularity": 1730,
+      "imagePath": "covers/console/fire-emblem-three-houses.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Fire_Emblem%3A_Three_Houses"
+    },
+    {
+      "id": "console-mario-kart-8",
+      "titleZh": "马力欧卡丁车8 豪华版",
+      "titleOriginal": "Mario Kart 8",
+      "aliases": [
+        "马车8"
+      ],
+      "year": 2014,
+      "publisher": "Nintendo",
+      "genre": "竞速",
+      "popularity": 1720,
+      "imagePath": "covers/console/mario-kart-8.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mario_Kart_8"
+    },
+    {
+      "id": "console-pokemon-arceus",
+      "titleZh": "宝可梦传说 阿尔宙斯",
+      "titleOriginal": "Pokémon Legends: Arceus",
+      "aliases": [
+        "阿尔宙斯"
+      ],
+      "year": 2022,
+      "publisher": "Game Freak",
+      "genre": "角色扮演",
+      "popularity": 1710,
+      "imagePath": "covers/console/pokemon-arceus.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pok%C3%A9mon_Legends%3A_Arceus"
+    }
+  ],
+  "boardgame": [
+    {
+      "id": "boardgame-catan",
+      "titleZh": "卡坦岛",
+      "titleOriginal": "Catan",
+      "aliases": [
+        "卡坦"
+      ],
+      "year": 1995,
+      "publisher": "Kosmos",
+      "genre": "策略",
+      "popularity": 2000,
+      "imagePath": "covers/boardgame/catan.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Catan"
+    },
+    {
+      "id": "boardgame-carcassonne",
+      "titleZh": "卡卡颂",
+      "titleOriginal": "Carcassonne",
+      "aliases": [
+        "卡卡城"
+      ],
+      "year": 2000,
+      "publisher": "Hans im Glück",
+      "genre": "版图",
+      "popularity": 1990,
+      "imagePath": "covers/boardgame/carcassonne.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Carcassonne_(board_game)"
+    },
+    {
+      "id": "boardgame-pandemic",
+      "titleZh": "瘟疫危机",
+      "titleOriginal": "Pandemic",
+      "aliases": [
+        "禁制之岛团队"
+      ],
+      "year": 2008,
+      "publisher": "Z-Man Games",
+      "genre": "合作",
+      "popularity": 1970,
+      "imagePath": "covers/boardgame/pandemic.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Pandemic_(board_game)"
+    },
+    {
+      "id": "boardgame-seven-wonders",
+      "titleZh": "七大奇迹",
+      "titleOriginal": "7 Wonders",
+      "aliases": [
+        "7大奇迹"
+      ],
+      "year": 2010,
+      "publisher": "Repos Production",
+      "genre": "卡牌",
+      "popularity": 1960,
+      "imagePath": "covers/boardgame/seven-wonders.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/7_Wonders_(board_game)"
+    },
+    {
+      "id": "boardgame-agricola",
+      "titleZh": "农场主",
+      "titleOriginal": "Agricola",
+      "aliases": [
+        "农家乐"
+      ],
+      "year": 2007,
+      "publisher": "Lookout Games",
+      "genre": "策略",
+      "popularity": 1950,
+      "imagePath": "covers/boardgame/agricola.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Agricola_(board_game)"
+    },
+    {
+      "id": "boardgame-puerto-rico",
+      "titleZh": "波多黎各",
+      "titleOriginal": "Puerto Rico",
+      "aliases": [
+        "波多黎各桌游"
+      ],
+      "year": 2002,
+      "publisher": "Alea",
+      "genre": "策略",
+      "popularity": 1940,
+      "imagePath": "covers/boardgame/puerto-rico.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Puerto_Rico"
+    },
+    {
+      "id": "boardgame-dominion",
+      "titleZh": "皇舆争霸",
+      "titleOriginal": "Dominion",
+      "aliases": [
+        "领土"
+      ],
+      "year": 2008,
+      "publisher": "Rio Grande Games",
+      "genre": "牌库构筑",
+      "popularity": 1930,
+      "imagePath": "covers/boardgame/dominion.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Dominion_(card_game)"
+    },
+    {
+      "id": "boardgame-azul",
+      "titleZh": "花砖物语",
+      "titleOriginal": "Azul",
+      "aliases": [
+        "蓝瓷"
+      ],
+      "year": 2017,
+      "publisher": "Next Move Games",
+      "genre": "抽象策略",
+      "popularity": 1910,
+      "imagePath": "covers/boardgame/azul.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Azul_(board_game)"
+    },
+    {
+      "id": "boardgame-wingspan",
+      "titleZh": "展翅翱翔",
+      "titleOriginal": "Wingspan",
+      "aliases": [
+        "翼展"
+      ],
+      "year": 2019,
+      "publisher": "Stonemaier Games",
+      "genre": "策略",
+      "popularity": 1900,
+      "imagePath": "covers/boardgame/wingspan.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Wingspan_(board_game)"
+    },
+    {
+      "id": "boardgame-scythe",
+      "titleZh": "镰刀战争",
+      "titleOriginal": "Scythe",
+      "aliases": [
+        "镰刀"
+      ],
+      "year": 2016,
+      "publisher": "Stonemaier Games",
+      "genre": "策略",
+      "popularity": 1890,
+      "imagePath": "covers/boardgame/scythe.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Scythe_(board_game)"
+    },
+    {
+      "id": "boardgame-terraforming-mars",
+      "titleZh": "殖民火星",
+      "titleOriginal": "Terraforming Mars",
+      "aliases": [
+        "重塑火星"
+      ],
+      "year": 2016,
+      "publisher": "FryxGames",
+      "genre": "策略",
+      "popularity": 1880,
+      "imagePath": "covers/boardgame/terraforming-mars.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Terraforming_of_Mars"
+    },
+    {
+      "id": "boardgame-gloomhaven",
+      "titleZh": "幽港迷城",
+      "titleOriginal": "Gloomhaven",
+      "aliases": [
+        "阴森港"
+      ],
+      "year": 2017,
+      "publisher": "Cephalofair Games",
+      "genre": "合作",
+      "popularity": 1870,
+      "imagePath": "covers/boardgame/gloomhaven.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Gloomhaven"
+    },
+    {
+      "id": "boardgame-root",
+      "titleZh": "茂林源记",
+      "titleOriginal": "Root",
+      "aliases": [
+        "根源"
+      ],
+      "year": 2018,
+      "publisher": "Leder Games",
+      "genre": "策略",
+      "popularity": 1860,
+      "imagePath": "covers/boardgame/root.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Root_(board_game)"
+    },
+    {
+      "id": "boardgame-ark-nova",
+      "titleZh": "方舟动物园",
+      "titleOriginal": "Ark Nova",
+      "aliases": [
+        "新方舟"
+      ],
+      "year": 2021,
+      "publisher": "Feuerland Spiele",
+      "genre": "策略",
+      "popularity": 1830,
+      "imagePath": "covers/boardgame/ark-nova.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Ark_Nova"
+    },
+    {
+      "id": "boardgame-patchwork",
+      "titleZh": "拼布艺术",
+      "titleOriginal": "Patchwork",
+      "aliases": [
+        "拼布"
+      ],
+      "year": 2014,
+      "publisher": "Lookout Games",
+      "genre": "双人",
+      "popularity": 1780,
+      "imagePath": "covers/boardgame/patchwork.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Patchwork"
+    },
+    {
+      "id": "boardgame-heat",
+      "titleZh": "极速狂飙",
+      "titleOriginal": "Heat: Pedal to the Metal",
+      "aliases": [
+        "Heat桌游"
+      ],
+      "year": 2022,
+      "publisher": "Days of Wonder",
+      "genre": "竞速",
+      "popularity": 1760,
+      "imagePath": "covers/boardgame/heat.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Heat%3A_Pedal_to_the_Metal"
+    },
+    {
+      "id": "boardgame-lost-ruins-arnak",
+      "titleZh": "阿纳克遗迹",
+      "titleOriginal": "Lost Ruins of Arnak",
+      "aliases": [
+        "失落的阿纳克"
+      ],
+      "year": 2020,
+      "publisher": "Czech Games Edition",
+      "genre": "策略",
+      "popularity": 1740,
+      "imagePath": "covers/boardgame/lost-ruins-arnak.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Lost_Ruins_of_Arnak"
+    },
+    {
+      "id": "boardgame-tapestry",
+      "titleZh": "文明绘卷",
+      "titleOriginal": "Tapestry",
+      "aliases": [
+        "织锦"
+      ],
+      "year": 2019,
+      "publisher": "Stonemaier Games",
+      "genre": "策略",
+      "popularity": 1730,
+      "imagePath": "covers/boardgame/tapestry.png",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Tapestry_(board_game)"
+    },
+    {
+      "id": "boardgame-mysterium",
+      "titleZh": "诡秘庄园",
+      "titleOriginal": "Mysterium",
+      "aliases": [
+        "神秘大地庄园"
+      ],
+      "year": 2015,
+      "publisher": "Libellud",
+      "genre": "合作",
+      "popularity": 1720,
+      "imagePath": "covers/boardgame/mysterium.jpg",
+      "sourceUrl": "https://en.wikipedia.org/wiki/Mysterium_(board_game)"
+    }
+  ]
+}

@@ -26,3 +26,5 @@ export interface SelectedGameSnapshot {
 export type GridSelection = Array<SelectedGameSnapshot | null>;
 
 export type CatalogMode = 'fc' | 'anime';
+
+export type CollectionVariant = 'movie' | 'classic-drama' | 'fc' | 'pc' | 'console' | 'boardgame';

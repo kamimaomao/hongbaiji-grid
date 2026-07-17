@@ -995,6 +995,601 @@ footer span:first-child {
   }
 }
 
+/* Expanded preference collections */
+.preference-movie .preference-nav nav button::after,
+.preference-fc .preference-nav nav button::after {
+  background: #c64b39;
+}
+
+.preference-pc .preference-nav nav button::after {
+  background: #46d4d2;
+}
+
+.preference-console .preference-nav nav button::after {
+  background: #356df3;
+}
+
+.preference-boardgame .preference-nav nav button::after {
+  background: #c84939;
+}
+
+.preference-movie .preference-nav,
+.preference-fc .preference-nav,
+.preference-pc .preference-nav,
+.preference-console .preference-nav,
+.preference-boardgame .preference-nav {
+  border-color: rgba(255, 255, 255, 0.12);
+  background: #080808;
+  color: #f8f5ef;
+  backdrop-filter: none;
+}
+
+.preference-movie .preference-nav nav button,
+.preference-fc .preference-nav nav button,
+.preference-pc .preference-nav nav button,
+.preference-console .preference-nav nav button,
+.preference-boardgame .preference-nav nav button {
+  color: #817d76;
+}
+
+.preference-movie .preference-nav nav button:hover,
+.preference-movie .preference-nav nav button.is-active,
+.preference-fc .preference-nav nav button:hover,
+.preference-fc .preference-nav nav button.is-active,
+.preference-pc .preference-nav nav button:hover,
+.preference-pc .preference-nav nav button.is-active,
+.preference-console .preference-nav nav button:hover,
+.preference-console .preference-nav nav button.is-active,
+.preference-boardgame .preference-nav nav button:hover,
+.preference-boardgame .preference-nav nav button.is-active {
+  color: #f8f5ef;
+}
+
+.preference-nav {
+  gap: 34px;
+  padding-inline: 34px;
+}
+
+.preference-nav nav {
+  gap: 4px;
+}
+
+.preference-nav nav button {
+  min-width: 54px;
+  padding-inline: 9px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.collection-experience {
+  --collection-accent: #c64b39;
+  --collection-text: #f2e7d4;
+  --collection-muted: #bba78e;
+  --collection-panel: rgba(9, 7, 5, 0.82);
+  --collection-border: rgba(244, 230, 204, 0.2);
+  min-height: calc(100vh - 74px);
+  color: var(--collection-text);
+  background-color: #15110e;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.collection-classic-drama {
+  --collection-accent: #d94365;
+  --collection-text: #34305d;
+  --collection-muted: #69658d;
+  --collection-panel: rgba(245, 243, 250, 0.82);
+  --collection-border: rgba(70, 63, 112, 0.24);
+  position: relative;
+  background-color: #ece9f5;
+}
+
+.collection-fc {
+  --collection-accent: #b63124;
+}
+
+.collection-pc {
+  --collection-accent: #45d4d0;
+  --collection-text: #f1ead9;
+  --collection-muted: #8ab2aa;
+}
+
+.collection-console {
+  --collection-accent: #356df3;
+  --collection-text: #f4f4f0;
+  --collection-muted: #9ba5b7;
+}
+
+.collection-boardgame {
+  --collection-accent: #c84939;
+  --collection-text: #efe4ce;
+  --collection-muted: #c5b493;
+}
+
+.collection-stage {
+  display: grid;
+  grid-template-columns: minmax(255px, 0.66fr) minmax(500px, 1.18fr) minmax(225px, 0.5fr);
+  gap: 26px;
+  align-items: center;
+  width: min(1392px, calc(100% - 48px));
+  min-height: calc(100vh - 74px);
+  margin: 0 auto;
+  padding: 28px 0 36px;
+}
+
+.collection-classic-drama .collection-stage {
+  padding-top: 78px;
+}
+
+.collection-copy {
+  min-width: 0;
+}
+
+.collection-kicker {
+  margin: 0 0 14px;
+  color: var(--collection-accent);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0;
+}
+
+.collection-copy h1 {
+  display: grid;
+  margin: 0;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-size: 48px;
+  font-weight: 900;
+  line-height: 1.12;
+}
+
+.collection-copy h1 span.is-accent {
+  color: var(--collection-accent);
+}
+
+.collection-description {
+  max-width: 310px;
+  margin: 20px 0 0;
+  color: var(--collection-muted);
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.collection-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-width: 218px;
+  min-height: 58px;
+  margin-top: 24px;
+  border: 1px solid var(--collection-accent);
+  border-radius: 2px;
+  padding: 0 20px;
+  background: var(--collection-accent);
+  color: #fff;
+  font-size: 19px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.collection-classic-drama .collection-primary {
+  color: #fffaf6;
+}
+
+.collection-filter-row {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  max-width: 340px;
+  margin-top: 20px;
+  border: 1px solid var(--collection-border);
+}
+
+.collection-filter-row button {
+  min-width: 0;
+  min-height: 38px;
+  border: 0;
+  border-right: 1px solid var(--collection-border);
+  border-radius: 0;
+  padding: 0 7px;
+  background: var(--collection-panel);
+  color: var(--collection-text);
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.collection-filter-row button:last-child {
+  border-right: 0;
+}
+
+.collection-filter-row button:hover,
+.collection-filter-row button:focus-visible {
+  background: var(--collection-accent);
+  color: white;
+}
+
+.collection-signature {
+  display: grid;
+  gap: 7px;
+  max-width: 340px;
+  margin-top: 20px;
+}
+
+.collection-signature span {
+  color: var(--collection-muted);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.collection-signature input {
+  width: 100%;
+  min-height: 44px;
+  border: 1px solid var(--collection-border);
+  border-radius: 1px;
+  padding: 0 12px;
+  background: var(--collection-panel);
+  color: var(--collection-text);
+  font-size: 16px;
+}
+
+.collection-prompt-list {
+  display: grid;
+  max-width: 340px;
+  margin-top: 18px;
+  border-top: 1px solid var(--collection-border);
+}
+
+.collection-prompt-list button {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 18px;
+  align-items: center;
+  min-height: 38px;
+  border: 0;
+  border-bottom: 1px solid var(--collection-border);
+  border-radius: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.collection-prompt-list button.is-active {
+  color: var(--collection-accent);
+}
+
+.collection-grid-shell {
+  min-width: 0;
+  border: 1px solid var(--collection-border);
+  padding: 9px;
+  background: var(--collection-panel);
+  box-shadow: 0 20px 54px rgba(0, 0, 0, 0.34);
+}
+
+.themed-grid-movie .themed-grid-slot,
+.themed-grid-classic-drama .themed-grid-slot,
+.themed-grid-fc .themed-grid-slot,
+.themed-grid-pc .themed-grid-slot,
+.themed-grid-console .themed-grid-slot {
+  aspect-ratio: 0.72;
+}
+
+.themed-grid-boardgame .themed-grid-slot {
+  aspect-ratio: 0.78;
+}
+
+.themed-grid-classic-drama .themed-grid-slot {
+  border-color: rgba(70, 63, 112, 0.24);
+}
+
+.themed-grid-title {
+  padding: 7px 8px;
+}
+
+.themed-grid-title strong {
+  font-size: 13px;
+}
+
+.collection-grid-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 48px;
+  padding: 9px 2px 0;
+}
+
+.collection-grid-footer > span {
+  color: var(--collection-accent);
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.collection-grid-footer button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  border: 1px solid var(--collection-accent);
+  border-radius: 2px;
+  padding: 0 13px;
+  background: transparent;
+  color: var(--collection-text);
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.collection-grid-footer button:disabled {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+.collection-share-preview {
+  align-self: center;
+  min-width: 0;
+  border: 1px solid var(--collection-border);
+  border-radius: 2px;
+  padding: 14px;
+  background: #eadcc1;
+  color: #211811;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.36);
+}
+
+.collection-share-preview > p {
+  margin: 0 0 11px;
+  font-family: "Songti SC", "STSong", serif;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+.collection-share-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.collection-share-grid img,
+.collection-share-grid button {
+  width: 100%;
+  aspect-ratio: 0.72;
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+  object-fit: cover;
+  background: #251d17;
+  color: white;
+}
+
+.collection-share-preview > small {
+  display: block;
+  margin-top: 10px;
+  color: #5f5143;
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+.collection-share-preview > strong {
+  display: block;
+  margin-top: 8px;
+  text-align: right;
+}
+
+.collection-movie .collection-share-preview {
+  border-color: #9a764c;
+  background: #e6d1aa;
+}
+
+.collection-classic-drama .collection-share-preview {
+  transform: rotate(1deg);
+  border-color: #d94365;
+  background: #f5efe7;
+  color: #3f315e;
+}
+
+.collection-fc .collection-share-preview {
+  border: 6px solid #a7281d;
+  background: #d8c6a7;
+}
+
+.collection-pc .collection-share-preview {
+  border-color: #4c6159;
+  background: #d7d2c3;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.collection-console .collection-share-preview {
+  border-color: #b8b4a9;
+  background: #e7e3d8;
+}
+
+.collection-boardgame .collection-share-preview {
+  border-color: #7d684c;
+  background: #e7dcc4;
+}
+
+.drama-category-switch {
+  position: absolute;
+  z-index: 6;
+  top: 10px;
+  left: max(24px, calc((100% - 1380px) / 2));
+  display: flex;
+  border-bottom: 1px solid rgba(40, 37, 34, 0.22);
+}
+
+.drama-experience {
+  position: relative;
+}
+
+.drama-category-switch button {
+  position: relative;
+  min-height: 42px;
+  border: 0;
+  border-radius: 0;
+  padding: 0 20px;
+  background: transparent;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.drama-category-switch button.is-active::after {
+  position: absolute;
+  right: 18px;
+  bottom: -1px;
+  left: 18px;
+  height: 3px;
+  background: #ff574f;
+  content: "";
+}
+
+.collection-classic-drama .drama-category-switch button.is-active::after {
+  background: #d94365;
+}
+
+.drama-experience .drama-layout {
+  padding-top: 72px;
+}
+
+.picker-movie,
+.picker-fc {
+  --accent: #c64b39;
+  --accent-hover: #a83b2d;
+  --accent-soft: rgba(198, 75, 57, 0.15);
+}
+
+.picker-classic-drama {
+  --accent: #d94365;
+  --accent-hover: #bd3152;
+  --accent-soft: rgba(217, 67, 101, 0.15);
+}
+
+.picker-pc {
+  --accent: #28aaa8;
+  --accent-hover: #218b89;
+  --accent-soft: rgba(40, 170, 168, 0.15);
+}
+
+.picker-console {
+  --accent: #356df3;
+  --accent-hover: #2456cb;
+  --accent-soft: rgba(53, 109, 243, 0.15);
+}
+
+.picker-boardgame {
+  --accent: #c84939;
+  --accent-hover: #a93a2d;
+  --accent-soft: rgba(200, 73, 57, 0.15);
+}
+
+@media (max-width: 1180px) {
+  .collection-stage {
+    grid-template-columns: minmax(260px, 0.68fr) minmax(500px, 1.2fr);
+  }
+
+  .collection-share-preview {
+    display: none;
+  }
+
+  .preference-nav > .anime-mode-switch {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .collection-stage {
+    grid-template-columns: 1fr;
+    width: min(720px, calc(100% - 32px));
+    padding-block: 42px;
+  }
+
+  .collection-copy {
+    max-width: 620px;
+  }
+
+  .collection-copy h1 {
+    font-size: 45px;
+  }
+
+  .collection-grid-shell {
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 620px) {
+  .preference-nav {
+    padding-inline: 12px;
+  }
+
+  .preference-nav nav button {
+    min-width: auto;
+    padding-inline: 10px;
+  }
+
+  .collection-experience {
+    min-height: calc(100vh - 60px);
+    background-position: center top;
+  }
+
+  .collection-stage,
+  .collection-classic-drama .collection-stage {
+    width: min(100% - 24px, 480px);
+    min-height: auto;
+    padding: 30px 0 38px;
+  }
+
+  .collection-classic-drama .collection-stage {
+    padding-top: 84px;
+  }
+
+  .collection-copy h1 {
+    font-size: 37px;
+  }
+
+  .collection-description {
+    font-size: 14px;
+  }
+
+  .collection-primary,
+  .collection-filter-row,
+  .collection-signature,
+  .collection-prompt-list {
+    width: 100%;
+    max-width: none;
+  }
+
+  .collection-grid-shell {
+    padding: 6px;
+  }
+
+  .collection-grid-footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .collection-grid-footer button {
+    justify-content: center;
+  }
+
+  .collection-share-preview {
+    display: block;
+    width: 100%;
+    max-width: 330px;
+    justify-self: center;
+    transform: none;
+  }
+
+  .drama-category-switch {
+    top: 8px;
+    left: 12px;
+  }
+
+  .drama-experience .drama-layout {
+    padding-top: 82px;
+  }
+}
+
 @media (prefers-color-scheme: dark) {
   :root {
     --page: #000000;
@@ -1036,5 +1631,1517 @@ footer span:first-child {
     transition-duration: 0.01ms !important;
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
+  }
+}
+
+/* Preference platform */
+.preference-app {
+  min-height: 100vh;
+  letter-spacing: 0;
+}
+
+.preference-nav {
+  position: relative;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  gap: 58px;
+  min-height: 74px;
+  padding: 0 48px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  background: #080808;
+  color: #f8f5ef;
+}
+
+.preference-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 90px;
+  min-height: 48px;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.preference-brand > span {
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-size: 31px;
+  font-weight: 900;
+}
+
+.preference-brand small {
+  color: #f8f5ef;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: left;
+}
+
+.preference-nav nav {
+  display: flex;
+  align-items: stretch;
+  gap: 18px;
+  min-height: 74px;
+}
+
+.preference-nav nav button {
+  position: relative;
+  min-width: 58px;
+  min-height: 48px;
+  border: 0;
+  padding: 0 8px;
+  background: transparent;
+  color: #77746f;
+  font-size: 17px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.preference-nav nav button::after {
+  position: absolute;
+  right: 12px;
+  bottom: 0;
+  left: 12px;
+  height: 3px;
+  background: #2f6df6;
+  content: "";
+  opacity: 0;
+}
+
+.preference-nav nav button:hover,
+.preference-nav nav button.is-active {
+  color: #f8f5ef;
+}
+
+.preference-nav nav button.is-active::after {
+  opacity: 1;
+}
+
+.preference-drama .preference-nav {
+  border-color: rgba(20, 20, 20, 0.14);
+  background: #f7f3ea;
+  color: #151515;
+}
+
+.preference-drama .preference-nav nav button {
+  color: #3e3b37;
+}
+
+.preference-drama .preference-nav nav button:hover,
+.preference-drama .preference-nav nav button.is-active {
+  color: #101010;
+}
+
+.preference-drama .preference-nav nav button::after {
+  background: #ff574f;
+}
+
+.preference-fc .preference-nav {
+  border-color: var(--separator);
+  background: var(--chrome);
+  color: var(--text);
+  backdrop-filter: saturate(180%) blur(22px);
+}
+
+.preference-fc .preference-nav nav button {
+  color: var(--secondary);
+}
+
+.preference-fc .preference-nav nav button:hover,
+.preference-fc .preference-nav nav button.is-active {
+  color: var(--text);
+}
+
+/* Shared themed grid */
+.themed-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 4px;
+  width: 100%;
+}
+
+.themed-grid-slot {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 2px;
+  padding: 0;
+  background: #24211e;
+  color: white;
+  cursor: pointer;
+}
+
+.themed-grid-music .themed-grid-slot {
+  aspect-ratio: 1;
+}
+
+.themed-grid-drama .themed-grid-slot {
+  aspect-ratio: 0.72;
+  border-color: rgba(20, 20, 20, 0.2);
+  background: #1b1b1b;
+}
+
+.themed-grid-slot img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.themed-grid-slot:hover img {
+  transform: scale(1.035);
+  filter: brightness(1.08);
+}
+
+.themed-grid-title {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: grid;
+  gap: 2px;
+  padding: 9px 10px;
+  background: rgba(0, 0, 0, 0.82);
+  text-align: left;
+}
+
+.themed-grid-music .themed-grid-title {
+  opacity: 0;
+  transition: opacity 180ms ease;
+}
+
+.themed-grid-music .themed-grid-slot:hover .themed-grid-title,
+.themed-grid-music .themed-grid-slot:focus-visible .themed-grid-title {
+  opacity: 1;
+}
+
+.themed-grid-title strong {
+  overflow: hidden;
+  font-size: 15px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.themed-grid-title small {
+  overflow: hidden;
+  color: rgba(255, 255, 255, 0.74);
+  font-size: 9px;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.themed-grid-index {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 11px;
+}
+
+.themed-grid-plus {
+  font-size: 42px;
+  font-weight: 300;
+}
+
+/* Music */
+.music-experience {
+  min-height: calc(100vh - 74px);
+  color: #f6f1e9;
+  background-color: #0c0a08;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.music-stage {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(290px, 0.72fr) minmax(500px, 1.25fr) minmax(210px, 0.52fr);
+  gap: 32px;
+  align-items: center;
+  width: min(1380px, calc(100% - 64px));
+  min-height: calc(100vh - 74px);
+  margin: 0 auto;
+  padding: 38px 0 54px;
+}
+
+.music-copy {
+  align-self: center;
+}
+
+.music-kicker {
+  margin: 0 0 20px;
+  color: #3d77ff;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.music-copy h1 {
+  margin: 0;
+  font-family: "Songti SC", "STSong", "Noto Serif SC", serif;
+  font-size: 54px;
+  font-weight: 900;
+  line-height: 1.18;
+}
+
+.music-copy > p:not(.music-kicker) {
+  max-width: 330px;
+  margin: 22px 0 0;
+  color: #b7a88f;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.music-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 220px;
+  min-height: 62px;
+  margin-top: 28px;
+  border: 0;
+  border-radius: 3px;
+  padding: 0 22px;
+  background: #245fe4;
+  color: white;
+  font-size: 21px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.music-primary:hover {
+  background: #3975fa;
+}
+
+.music-mode-tabs {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+}
+
+.music-mode-tabs span {
+  position: relative;
+  padding: 0 0 12px;
+  color: #897f72;
+  font-size: 15px;
+}
+
+.music-mode-tabs span.is-active {
+  color: white;
+  font-weight: 700;
+}
+
+.music-mode-tabs span.is-active::after {
+  position: absolute;
+  right: 0;
+  bottom: -1px;
+  left: 0;
+  height: 3px;
+  background: #2f6df6;
+  content: "";
+}
+
+.music-signature {
+  display: grid;
+  gap: 8px;
+  margin-top: 22px;
+}
+
+.music-signature span {
+  color: #938571;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.music-signature input {
+  width: 220px;
+  min-height: 44px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 3px;
+  padding: 0 12px;
+  background: rgba(0, 0, 0, 0.48);
+  color: white;
+}
+
+.music-grid-area {
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid rgba(183, 153, 111, 0.22);
+  background: rgba(3, 3, 3, 0.7);
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.48);
+}
+
+.music-grid-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 52px;
+  padding: 10px 3px 0;
+}
+
+.music-grid-footer > span {
+  color: #8a7d6d;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.music-grid-footer button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  border: 1px solid #2f6df6;
+  border-radius: 3px;
+  padding: 0 14px;
+  background: transparent;
+  color: #dbe5ff;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.music-grid-footer button:disabled {
+  border-color: #4d4740;
+  color: #6f675e;
+  cursor: not-allowed;
+}
+
+.music-share-sample {
+  align-self: end;
+  justify-self: center;
+  width: min(205px, 100%);
+  min-width: 0;
+  margin-bottom: 18px;
+  transform: rotate(1deg);
+  border: 1px solid rgba(38, 26, 17, 0.5);
+  border-radius: 2px;
+  padding: 16px;
+  background: #e8ddc8;
+  color: #18120e;
+  box-shadow: 0 18px 50px rgba(0, 0, 0, 0.48);
+}
+
+.music-share-sample > p {
+  margin: 0 0 11px;
+  font-family: "Songti SC", serif;
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.music-share-sample > div {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+}
+
+.music-share-sample img,
+.music-share-sample > div span {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: #b8ad9a;
+}
+
+.music-share-sample > div span {
+  display: grid;
+  place-items: center;
+  color: #776d5e;
+  font-size: 10px;
+}
+
+.music-share-sample small {
+  display: block;
+  margin-top: 12px;
+  color: #4c4339;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+.music-share-sample > strong {
+  display: block;
+  margin-top: 10px;
+  font-family: "Songti SC", serif;
+  text-align: right;
+}
+
+/* Drama */
+.drama-experience {
+  min-height: calc(100vh - 74px);
+  color: #171717;
+  background-color: #f7f3ea;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.drama-layout {
+  display: grid;
+  grid-template-columns: minmax(300px, 0.72fr) minmax(480px, 1.18fr) minmax(260px, 0.62fr);
+  gap: 34px;
+  align-items: center;
+  width: min(1380px, calc(100% - 72px));
+  min-height: calc(100vh - 74px);
+  margin: 0 auto;
+  padding: 34px 0 38px;
+}
+
+.drama-copy {
+  min-width: 0;
+}
+
+.drama-issue {
+  display: inline-block;
+  padding: 5px 9px;
+  background: #121212;
+  color: white;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.drama-copy h1 {
+  display: grid;
+  margin: 16px 0 0;
+  font-family: "Heiti SC", "PingFang SC", sans-serif;
+  font-size: 50px;
+  font-weight: 900;
+  line-height: 1.07;
+}
+
+.drama-copy h1 span.is-accent {
+  color: #ff574f;
+  font-size: 62px;
+}
+
+.drama-copy > p {
+  max-width: 290px;
+  margin: 20px 0 0;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.drama-primary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 300px;
+  min-height: 58px;
+  margin-top: 18px;
+  border: 0;
+  border-radius: 0;
+  padding: 0 18px;
+  background: #ff574f;
+  color: white;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.drama-primary:hover {
+  background: #ef433d;
+}
+
+.drama-progress {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  max-width: 300px;
+  padding: 12px 0 13px;
+  border-bottom: 3px solid #ff574f;
+}
+
+.drama-progress strong {
+  color: #ff574f;
+  font-size: 42px;
+  line-height: 1;
+}
+
+.drama-progress span {
+  font-size: 24px;
+  font-weight: 800;
+}
+
+.drama-progress small {
+  margin-left: auto;
+  font-size: 10px;
+}
+
+.drama-signature {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 300px;
+  margin-top: 12px;
+}
+
+.drama-signature span {
+  font-size: 11px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.drama-signature input {
+  width: 100%;
+  min-height: 38px;
+  border: 0;
+  border-bottom: 1px solid #1a1a1a;
+  border-radius: 0;
+  padding: 0 4px;
+  background: transparent;
+}
+
+.drama-prompt-list {
+  max-width: 300px;
+  margin-top: 18px;
+}
+
+.drama-prompt-list > p {
+  margin: 0;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #141414;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.drama-prompt-list button {
+  display: grid;
+  grid-template-columns: 28px minmax(0, 1fr) 18px;
+  align-items: center;
+  width: 100%;
+  min-height: 34px;
+  border: 0;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.16);
+  padding: 0;
+  background: transparent;
+  color: #222;
+  text-align: left;
+  cursor: pointer;
+}
+
+.drama-prompt-list button.is-active,
+.drama-prompt-list button:hover {
+  color: #e83f38;
+}
+
+.drama-prompt-list button strong {
+  overflow: hidden;
+  font-size: 13px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.drama-grid-area {
+  min-width: 0;
+  border: 1px solid rgba(20, 20, 20, 0.12);
+  background: #111;
+}
+
+.drama-grid-caption {
+  margin: 0;
+  padding: 10px 12px;
+  background: #f7f3ea;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+.drama-share-preview {
+  align-self: stretch;
+  min-width: 0;
+  padding: 44px 24px 26px;
+  text-align: center;
+}
+
+.drama-share-preview > p {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+}
+
+.drama-share-preview > small {
+  display: block;
+  margin-top: 4px;
+  font-size: 11px;
+}
+
+.drama-paper-poster {
+  position: relative;
+  margin: 22px auto 0;
+  transform: rotate(-1deg);
+  border: 1px solid rgba(20, 20, 20, 0.14);
+  border-radius: 1px;
+  padding: 16px;
+  background: #f8f4ec;
+  text-align: left;
+  box-shadow: 0 14px 28px rgba(20, 50, 40, 0.22);
+}
+
+.drama-paper-brand {
+  font-family: "Songti SC", serif;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.drama-paper-poster h2 {
+  margin: 14px 0 12px;
+  font-size: 21px;
+  line-height: 1.05;
+}
+
+.drama-paper-poster h2 strong {
+  color: #ff574f;
+  font-size: 32px;
+}
+
+.drama-paper-poster > div {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 2px;
+}
+
+.drama-paper-poster img,
+.drama-paper-poster > div button {
+  width: 100%;
+  aspect-ratio: 0.76;
+  border: 0;
+  border-radius: 0;
+  object-fit: cover;
+}
+
+.drama-paper-poster > div button {
+  background: #171717;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.drama-paper-poster em {
+  position: absolute;
+  top: 22px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: #ff574f;
+  color: white;
+  font-size: 19px;
+  font-style: normal;
+  font-weight: 900;
+}
+
+.drama-preview-signature {
+  display: block;
+  margin-top: 24px;
+  font-family: "Kaiti SC", serif;
+  font-size: 21px;
+  font-weight: 700;
+}
+
+/* Anime duel */
+.anime-duel {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 390px;
+  min-height: calc(100vh - 74px);
+  color: #101010;
+  background-color: #f0e7d6;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.anime-mode-switch {
+  display: grid;
+  grid-template-columns: repeat(3, 94px);
+  width: max-content;
+  margin-left: auto;
+  border: 1px solid #5c5c5c;
+  background: #090909;
+  color: #ddd;
+}
+
+.anime-mode-switch span {
+  display: grid;
+  place-items: center;
+  min-height: 42px;
+  border-right: 1px solid #5c5c5c;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.anime-mode-switch span:last-child {
+  border-right: 0;
+}
+
+.anime-mode-switch span.is-active {
+  background: #f8b800;
+  color: #151515;
+}
+
+.duel-main {
+  min-width: 0;
+  padding: 34px 26px 24px;
+}
+
+.duel-title-row {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 48px;
+  gap: 20px;
+  align-items: center;
+}
+
+.duel-match-number {
+  padding: 14px 16px;
+  transform: rotate(-1deg);
+  background: #101010;
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.duel-match-number strong {
+  color: #ef3e2f;
+  font-size: 40px;
+  line-height: 1;
+}
+
+.duel-title-row h1 {
+  margin: 0;
+  font-family: "Heiti SC", "PingFang SC", sans-serif;
+  font-size: 45px;
+  font-weight: 900;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.icon-button {
+  display: inline-grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.icon-button:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.duel-cards {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 68px;
+  margin-top: 24px;
+}
+
+.duel-card {
+  position: relative;
+  min-width: 0;
+  overflow: hidden;
+  border: 7px solid #0f0f0f;
+  border-radius: 0;
+  padding: 78px 22px 46px;
+  background: #111;
+  color: white;
+  cursor: pointer;
+}
+
+.duel-card-a {
+  border-color: #1857bd;
+}
+
+.duel-card-b {
+  border-color: #d9382a;
+}
+
+.duel-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 0 rgba(12, 12, 12, 0.2);
+}
+
+.duel-card img {
+  width: 100%;
+  height: 500px;
+  border: 2px solid rgba(255, 255, 255, 0.44);
+  object-fit: cover;
+}
+
+.duel-letter {
+  position: absolute;
+  top: 8px;
+  font-size: 74px;
+  font-style: italic;
+  font-weight: 900;
+  line-height: 1;
+  opacity: 0.96;
+}
+
+.duel-card-a .duel-letter {
+  left: 18px;
+  color: #2d79ed;
+}
+
+.duel-card-b .duel-letter {
+  right: 18px;
+  color: #ef493a;
+}
+
+.duel-card-copy {
+  position: absolute;
+  top: 22px;
+  right: 24px;
+  left: 102px;
+  display: grid;
+  min-width: 0;
+  text-align: left;
+}
+
+.duel-card-b .duel-card-copy {
+  right: 102px;
+  left: 24px;
+  text-align: right;
+}
+
+.duel-card-copy strong {
+  overflow: hidden;
+  font-size: 22px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.duel-card-copy small {
+  overflow: hidden;
+  margin-top: 4px;
+  color: #f8b800;
+  font-size: 11px;
+  text-overflow: ellipsis;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.duel-pick-label {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  min-height: 38px;
+  padding-top: 9px;
+  background: #1857bd;
+  font-size: 13px;
+  font-weight: 900;
+}
+
+.duel-card-b .duel-pick-label {
+  background: #d9382a;
+}
+
+.duel-vs {
+  position: absolute;
+  z-index: 2;
+  top: 46%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  padding: 8px;
+  background: #111;
+  color: white;
+  font-family: Impact, sans-serif;
+  font-size: 58px;
+}
+
+.duel-skip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: min(540px, 80%);
+  min-height: 48px;
+  margin: 16px auto 0;
+  border: 0;
+  border-radius: 0;
+  background: #111;
+  color: white;
+  font-size: 15px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.duel-skip:disabled {
+  opacity: 0.45;
+}
+
+.duel-sidebar {
+  min-width: 0;
+  padding: 24px 24px 28px;
+  background: rgba(6, 6, 6, 0.92);
+  color: white;
+}
+
+.duel-signature {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid #424242;
+}
+
+.duel-signature span {
+  color: #aaa;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.duel-signature input {
+  min-width: 0;
+  min-height: 38px;
+  border: 1px solid #555;
+  border-radius: 2px;
+  padding: 0 10px;
+  background: #171717;
+  color: white;
+}
+
+.duel-progress {
+  margin-top: 18px;
+}
+
+.duel-progress h2 {
+  margin: 0 0 12px;
+  font-size: 18px;
+}
+
+.duel-progress > div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 6px;
+}
+
+.duel-progress span {
+  display: grid;
+  gap: 4px;
+  border-top: 4px solid #444;
+  padding-top: 8px;
+  color: #777;
+}
+
+.duel-progress span.is-complete {
+  border-color: #f8b800;
+  color: white;
+}
+
+.duel-progress strong {
+  font-size: 15px;
+}
+
+.duel-progress small {
+  font-size: 9px;
+}
+
+.duel-poster-preview {
+  margin-top: 22px;
+  border: 1px solid #454545;
+  padding: 14px;
+}
+
+.duel-poster-preview > p {
+  margin: 0 0 12px;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.duel-poster-preview > p span {
+  color: #888;
+  font-size: 11px;
+}
+
+.duel-poster-preview > div {
+  border: 2px solid #f8b800;
+  padding: 12px;
+  background: #111;
+}
+
+.duel-poster-signature {
+  color: #f8b800;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.duel-poster-preview h2 {
+  margin: 4px 0 10px;
+  color: #f8b800;
+  font-size: 30px;
+  line-height: 1;
+}
+
+.duel-poster-winner {
+  width: 100%;
+  height: 276px;
+  object-fit: cover;
+}
+
+.duel-poster-preview > div > strong {
+  display: block;
+  margin-top: 8px;
+  overflow: hidden;
+  font-size: 17px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.duel-poster-preview > div > small {
+  display: block;
+  margin: 11px 0 5px;
+  color: #f8b800;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.duel-top-four {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 4px;
+}
+
+.duel-top-four span {
+  position: relative;
+  min-width: 0;
+}
+
+.duel-top-four img {
+  width: 100%;
+  aspect-ratio: 0.76;
+  object-fit: cover;
+}
+
+.duel-top-four b {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: grid;
+  place-items: center;
+  width: 20px;
+  height: 20px;
+  background: #f8b800;
+  color: #111;
+  font-size: 10px;
+}
+
+.duel-champion-stage {
+  display: grid;
+  justify-items: center;
+  width: min(620px, 100%);
+  margin: 30px auto 0;
+  border: 8px solid #111;
+  padding: 20px;
+  background: #f8b800;
+  text-align: center;
+}
+
+.duel-champion-stage > img {
+  width: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.duel-champion-stage > span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.duel-champion-stage h2 {
+  margin: 4px 0 0;
+  font-size: 34px;
+}
+
+.duel-champion-stage p {
+  margin: 3px 0 12px;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.duel-champion-stage > div {
+  display: flex;
+  gap: 8px;
+}
+
+.duel-champion-stage button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  min-height: 44px;
+  border: 0;
+  border-radius: 2px;
+  padding: 0 14px;
+  background: #111;
+  color: white;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+/* Poster dialog */
+.poster-modal-backdrop {
+  position: fixed;
+  z-index: 80;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.78);
+}
+
+.poster-modal {
+  position: relative;
+  display: grid;
+  gap: 12px;
+  width: min(420px, 100%);
+  max-height: calc(100vh - 48px);
+  overflow: auto;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 8px;
+  padding: 14px;
+  background: #111;
+}
+
+.poster-modal > img {
+  width: 100%;
+  border-radius: 3px;
+}
+
+.poster-modal-close {
+  position: absolute;
+  z-index: 2;
+  top: 20px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.72);
+  color: white;
+}
+
+.poster-download {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  border-radius: 4px;
+  background: #2f6df6;
+  color: white;
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* Theme-specific picker */
+.picker-music,
+.picker-drama {
+  border-radius: 8px;
+}
+
+.picker-music {
+  --accent: #2f6df6;
+  --accent-soft: rgba(47, 109, 246, 0.15);
+}
+
+.picker-drama {
+  --accent: #ff574f;
+  --accent-hover: #ef433d;
+  --accent-soft: rgba(255, 87, 79, 0.14);
+}
+
+/* Legacy FC shell */
+.legacy-fc {
+  min-height: calc(100vh - 74px);
+  padding: 58px 0 70px;
+  background: var(--page);
+}
+
+.legacy-fc .project-intro,
+.legacy-fc .workspace-grid {
+  width: min(1120px, calc(100% - 40px));
+  margin-inline: auto;
+}
+
+@media (max-width: 1180px) {
+  .music-stage,
+  .drama-layout {
+    grid-template-columns: minmax(260px, 0.66fr) minmax(470px, 1.1fr);
+  }
+
+  .music-share-sample,
+  .drama-share-preview {
+    display: none;
+  }
+
+  .duel-card img {
+    height: 430px;
+  }
+}
+
+@media (max-width: 900px) {
+  .preference-nav {
+    gap: 20px;
+    padding: 0 20px;
+  }
+
+  .preference-nav nav {
+    flex: 1;
+    justify-content: flex-end;
+    gap: 6px;
+  }
+
+  .music-stage,
+  .drama-layout {
+    grid-template-columns: 1fr;
+    width: min(720px, calc(100% - 32px));
+    padding-top: 42px;
+  }
+
+  .music-copy,
+  .drama-copy {
+    max-width: 620px;
+  }
+
+  .music-copy h1 {
+    font-size: 48px;
+  }
+
+  .music-grid-area {
+    margin-bottom: 24px;
+  }
+
+  .drama-copy h1 {
+    font-size: 44px;
+  }
+
+  .drama-copy h1 span.is-accent {
+    font-size: 54px;
+  }
+
+  .drama-grid-area {
+    margin-bottom: 32px;
+  }
+
+  .anime-duel {
+    grid-template-columns: 1fr;
+  }
+
+  .duel-sidebar {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .duel-poster-preview {
+    grid-row: span 2;
+    margin-top: 0;
+  }
+
+  .preference-nav > .anime-mode-switch {
+    display: none;
+  }
+}
+
+@media (max-width: 620px) {
+  .preference-nav {
+    position: sticky;
+    top: 0;
+    gap: 8px;
+    min-height: 60px;
+    overflow: hidden;
+    padding: 0 12px;
+  }
+
+  .preference-brand {
+    min-width: 64px;
+  }
+
+  .preference-brand > span {
+    font-size: 24px;
+  }
+
+  .preference-brand small {
+    display: none;
+  }
+
+  .preference-nav nav {
+    min-height: 60px;
+    overflow-x: auto;
+    justify-content: flex-start;
+  }
+
+  .preference-nav nav button {
+    flex: 0 0 auto;
+    min-width: 52px;
+    font-size: 14px;
+  }
+
+  .music-experience,
+  .drama-experience,
+  .anime-duel,
+  .legacy-fc {
+    min-height: calc(100vh - 60px);
+  }
+
+  .music-stage,
+  .drama-layout {
+    width: min(100% - 24px, 480px);
+    min-height: auto;
+    padding: 30px 0 38px;
+  }
+
+  .music-copy h1 {
+    font-size: 38px;
+  }
+
+  .music-primary {
+    width: 100%;
+  }
+
+  .music-signature input {
+    width: 100%;
+  }
+
+  .music-grid-area {
+    padding: 6px;
+  }
+
+  .music-grid-footer {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .music-grid-footer button {
+    justify-content: center;
+  }
+
+  .drama-copy h1 {
+    font-size: 36px;
+  }
+
+  .drama-copy h1 span.is-accent {
+    font-size: 46px;
+  }
+
+  .drama-primary,
+  .drama-progress,
+  .drama-signature,
+  .drama-prompt-list {
+    max-width: none;
+  }
+
+  .duel-main {
+    padding: 22px 12px 20px;
+  }
+
+  .duel-title-row {
+    grid-template-columns: auto 44px;
+    gap: 10px;
+  }
+
+  .duel-title-row h1 {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    font-size: 31px;
+  }
+
+  .duel-match-number {
+    font-size: 12px;
+  }
+
+  .duel-match-number strong {
+    font-size: 32px;
+  }
+
+  .duel-undo {
+    justify-self: end;
+  }
+
+  .duel-cards {
+    gap: 12px;
+  }
+
+  .duel-card {
+    border-width: 4px;
+    padding: 58px 8px 38px;
+  }
+
+  .duel-card img {
+    height: 330px;
+  }
+
+  .duel-letter {
+    top: 8px;
+    font-size: 46px;
+  }
+
+  .duel-card-copy,
+  .duel-card-b .duel-card-copy {
+    top: 15px;
+    right: 8px;
+    left: 58px;
+    text-align: left;
+  }
+
+  .duel-card-copy strong {
+    font-size: 14px;
+  }
+
+  .duel-card-copy small {
+    display: none;
+  }
+
+  .duel-vs {
+    top: 44%;
+    font-size: 34px;
+  }
+
+  .duel-skip {
+    width: 100%;
+  }
+
+  .duel-sidebar {
+    display: block;
+    padding: 20px 14px 28px;
+  }
+
+  .duel-progress,
+  .duel-poster-preview {
+    margin-top: 20px;
+  }
+
+  .duel-poster-winner {
+    height: 360px;
+  }
+
+  .duel-champion-stage > img {
+    height: 380px;
+  }
+
+  .duel-champion-stage > div {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .duel-champion-stage button {
+    justify-content: center;
+  }
+
+  .legacy-fc {
+    padding-top: 34px;
   }
 }
