@@ -6,6 +6,9 @@ const isRailway = Boolean(process.env.RAILWAY_ENVIRONMENT || process.env.RAILWAY
 export default defineConfig({
   base: isRailway ? '/' : '/hongbaiji-grid/',
   plugins: [react()],
+  preview: {
+    allowedHosts: ['hongbaiji-grid-production.up.railway.app'],
+  },
   test: {
     environment: 'jsdom',
     setupFiles: ['./src/test/setup.ts'],
