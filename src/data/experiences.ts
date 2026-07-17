@@ -1,6 +1,7 @@
 import type { CatalogItem } from '../types';
 
 const asset = (path: string) => `${import.meta.env.BASE_URL}${path}`;
+const dramaCover = (fileName: string) => asset(`covers/drama/${fileName}?v=20260717`);
 
 export const musicAlbums: CatalogItem[] = [
   { id: 'album-jay', titleZh: 'Jay', titleOriginal: 'Jay', aliases: ['周杰伦同名专辑', '周杰伦'], year: 2000, publisher: '周杰伦', genre: '华语', popularity: 1200, imageUrl: asset('covers/music/jay.jpg') },
@@ -18,18 +19,18 @@ export const musicAlbums: CatalogItem[] = [
 ];
 
 export const dramaShows: CatalogItem[] = [
-  { id: 'drama-first-frost', titleZh: '难哄', titleOriginal: 'The First Frost', aliases: ['难哄电视剧'], year: 2025, publisher: '优酷', genre: '都市爱情', popularity: 1200, imageUrl: asset('covers/drama/first-frost.jpg') },
-  { id: 'drama-flourished-peony', titleZh: '国色芳华', titleOriginal: 'Flourished Peony', aliases: ['国色芳华电视剧'], year: 2025, publisher: '芒果TV', genre: '古装', popularity: 1190, imageUrl: asset('covers/drama/flourished-peony.jpg') },
-  { id: 'drama-playing-go', titleZh: '棋士', titleOriginal: 'Playing Go', aliases: ['棋士电视剧'], year: 2025, publisher: '腾讯视频', genre: '悬疑', popularity: 1180, imageUrl: asset('covers/drama/playing-go.jpg') },
-  { id: 'drama-the-double', titleZh: '墨雨云间', titleOriginal: 'The Double', aliases: ['墨雨云间电视剧'], year: 2024, publisher: '优酷', genre: '古装', popularity: 1170, imageUrl: asset('covers/drama/the-double.jpg') },
-  { id: 'drama-when-i-fly', titleZh: '当我飞奔向你', titleOriginal: 'When I Fly Towards You', aliases: ['当我飞奔向你电视剧'], year: 2023, publisher: '优酷', genre: '青春', popularity: 1160, imageUrl: asset('covers/drama/when-i-fly.jpg') },
-  { id: 'drama-lost-you-forever', titleZh: '长相思', titleOriginal: 'Lost You Forever', aliases: ['长相思电视剧'], year: 2023, publisher: '腾讯视频', genre: '古装', popularity: 1150, imageUrl: asset('covers/drama/lost-you-forever.jpg') },
-  { id: 'drama-bad-kids', titleZh: '隐秘的角落', titleOriginal: 'The Bad Kids', aliases: ['隐秘的角落电视剧'], year: 2020, publisher: '爱奇艺', genre: '悬疑', popularity: 1140, imageUrl: asset('covers/drama/bad-kids.jpg') },
-  { id: 'drama-long-season', titleZh: '漫长的季节', titleOriginal: 'The Long Season', aliases: ['漫长的季节电视剧'], year: 2023, publisher: '腾讯视频', genre: '悬疑', popularity: 1130, imageUrl: asset('covers/drama/long-season.jpg') },
-  { id: 'drama-hidden-love', titleZh: '偷偷藏不住', titleOriginal: 'Hidden Love', aliases: ['偷偷藏不住电视剧'], year: 2023, publisher: '优酷', genre: '都市爱情', popularity: 1120, imageUrl: asset('covers/drama/hidden-love.jpg') },
-  { id: 'drama-reset', titleZh: '开端', titleOriginal: 'Reset', aliases: ['开端电视剧'], year: 2022, publisher: '腾讯视频', genre: '悬疑', popularity: 1110, imageUrl: asset('covers/drama/reset.jpg') },
-  { id: 'drama-meet-yourself', titleZh: '去有风的地方', titleOriginal: 'Meet Yourself', aliases: ['去有风的地方电视剧'], year: 2023, publisher: '芒果TV', genre: '治愈', popularity: 1100, imageUrl: asset('covers/drama/meet-yourself.jpg') },
-  { id: 'drama-blossoms', titleZh: '繁花', titleOriginal: 'Blossoms Shanghai', aliases: ['繁花电视剧'], year: 2023, publisher: '腾讯视频', genre: '年代', popularity: 1090, imageUrl: asset('covers/drama/blossoms.jpg') },
+  { id: 'drama-first-frost', titleZh: '难哄', titleOriginal: 'The First Frost', aliases: ['难哄电视剧'], year: 2025, publisher: '优酷', genre: '都市爱情', popularity: 1200, imageUrl: dramaCover('first-frost.jpg') },
+  { id: 'drama-flourished-peony', titleZh: '国色芳华', titleOriginal: 'Flourished Peony', aliases: ['国色芳华电视剧'], year: 2025, publisher: '芒果TV', genre: '古装', popularity: 1190, imageUrl: dramaCover('flourished-peony.jpg') },
+  { id: 'drama-playing-go', titleZh: '棋士', titleOriginal: 'Playing Go', aliases: ['棋士电视剧'], year: 2025, publisher: '腾讯视频', genre: '悬疑', popularity: 1180, imageUrl: dramaCover('playing-go.jpg') },
+  { id: 'drama-the-double', titleZh: '墨雨云间', titleOriginal: 'The Double', aliases: ['墨雨云间电视剧'], year: 2024, publisher: '优酷', genre: '古装', popularity: 1170, imageUrl: dramaCover('the-double.jpg') },
+  { id: 'drama-when-i-fly', titleZh: '当我飞奔向你', titleOriginal: 'When I Fly Towards You', aliases: ['当我飞奔向你电视剧'], year: 2023, publisher: '优酷', genre: '青春', popularity: 1160, imageUrl: dramaCover('when-i-fly.jpg') },
+  { id: 'drama-lost-you-forever', titleZh: '长相思', titleOriginal: 'Lost You Forever', aliases: ['长相思电视剧'], year: 2023, publisher: '腾讯视频', genre: '古装', popularity: 1150, imageUrl: dramaCover('lost-you-forever.jpg') },
+  { id: 'drama-bad-kids', titleZh: '隐秘的角落', titleOriginal: 'The Bad Kids', aliases: ['隐秘的角落电视剧'], year: 2020, publisher: '爱奇艺', genre: '悬疑', popularity: 1140, imageUrl: dramaCover('bad-kids.jpg') },
+  { id: 'drama-long-season', titleZh: '漫长的季节', titleOriginal: 'The Long Season', aliases: ['漫长的季节电视剧'], year: 2023, publisher: '腾讯视频', genre: '悬疑', popularity: 1130, imageUrl: dramaCover('long-season.jpg') },
+  { id: 'drama-hidden-love', titleZh: '偷偷藏不住', titleOriginal: 'Hidden Love', aliases: ['偷偷藏不住电视剧'], year: 2023, publisher: '优酷', genre: '都市爱情', popularity: 1120, imageUrl: dramaCover('hidden-love.jpg') },
+  { id: 'drama-reset', titleZh: '开端', titleOriginal: 'Reset', aliases: ['开端电视剧'], year: 2022, publisher: '腾讯视频', genre: '悬疑', popularity: 1110, imageUrl: dramaCover('reset.jpg') },
+  { id: 'drama-meet-yourself', titleZh: '去有风的地方', titleOriginal: 'Meet Yourself', aliases: ['去有风的地方电视剧'], year: 2023, publisher: '芒果TV', genre: '治愈', popularity: 1100, imageUrl: dramaCover('meet-yourself.jpg') },
+  { id: 'drama-blossoms', titleZh: '繁花', titleOriginal: 'Blossoms Shanghai', aliases: ['繁花电视剧'], year: 2023, publisher: '腾讯视频', genre: '年代', popularity: 1090, imageUrl: dramaCover('blossoms.jpg') },
 ];
 
 export const duelAnime: CatalogItem[] = [
