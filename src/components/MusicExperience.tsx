@@ -120,6 +120,7 @@ export function MusicExperience() {
         items={musicAlbums}
         title="选择一张专辑"
         variant="music"
+        searchCategory="music"
         genreOptions={getGenreOptions(musicAlbums)}
         decadeOptions={getDecadeOptions(musicAlbums)}
         unavailableGameIds={unavailableIds}

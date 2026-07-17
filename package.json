@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "catalog:drama-posters": "node scripts/fetch-drama-posters.mjs",
-    "start": "vite preview --host 0.0.0.0 --port ${PORT:-4173}",
+    "start": "node server.mjs",
     "test": "vitest run",
     "test:watch": "vitest"
   },
@@ -17,6 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "typescript": "^5.8.0",
+    "undici": "^7.28.0",
     "vite": "^7.0.0"
   },
   "devDependencies": {

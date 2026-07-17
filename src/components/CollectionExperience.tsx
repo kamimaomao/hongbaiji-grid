@@ -203,6 +203,7 @@ export function CollectionExperience({ config, headerSlot }: CollectionExperienc
         items={config.items}
         title={config.pickerTitle}
         variant={config.variant}
+        searchCategory={config.variant}
         initialGenre={pickerGenre}
         genreOptions={getGenreOptions(config.items)}
         decadeOptions={getDecadeOptions(config.items)}

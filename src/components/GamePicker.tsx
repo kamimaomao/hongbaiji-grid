@@ -1,7 +1,8 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { FilterOption } from '../data/catalogs';
+import { searchRemoteCatalog } from '../lib/remoteCatalog';
 import { filterGames, sortGames, type DecadeFilter, type SortMode } from '../lib/search';
-import type { CollectionVariant, FcGame, GameGenre } from '../types';
+import type { CollectionVariant, FcGame, GameGenre, RemoteCatalogCategory } from '../types';
 
 interface GamePickerProps {
   open: boolean;
@@ -11,6 +12,7 @@ interface GamePickerProps {
   initialGenre?: GameGenre | 'all';
   genreOptions: FilterOption[];
   decadeOptions: FilterOption[];
+  searchCategory?: RemoteCatalogCategory;
   unavailableGameIds: Set<string>;
   onClose: () => void;
   onSelect: (game: FcGame) => void;
@@ -24,6 +26,7 @@ export function GamePicker({
   initialGenre = 'all',
   genreOptions,
   decadeOptions,
+  searchCategory,
   unavailableGameIds,
   onClose,
   onSelect,
@@ -32,6 +35,9 @@ export function GamePicker({
   const [genre, setGenre] = useState<GameGenre | 'all'>(initialGenre);
   const [decade, setDecade] = useState<DecadeFilter>('all');
   const [sort, setSort] = useState<SortMode>('popularity');
+  const [remoteItems, setRemoteItems] = useState<FcGame[]>([]);
+  const [failedImageIds, setFailedImageIds] = useState<Set<string>>(new Set());
+  const [remoteStatus, setRemoteStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const searchRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
@@ -51,10 +57,46 @@ export function GamePicker({
     };
   }, [onClose, open]);
 
+  useEffect(() => {
+    const trimmedQuery = query.trim();
+    if (!open || !searchCategory || trimmedQuery.length < 2) {
+      setRemoteItems([]);
+      setRemoteStatus('idle');
+      return;
+    }
+
+    const controller = new AbortController();
+    const timer = window.setTimeout(async () => {
+      setRemoteStatus('loading');
+      try {
+        setRemoteItems(await searchRemoteCatalog(searchCategory, trimmedQuery, controller.signal));
+        setRemoteStatus('success');
+      } catch (error) {
+        if (controller.signal.aborted) return;
+        setRemoteItems([]);
+        setRemoteStatus('error');
+      }
+    }, 320);
+
+    return () => {
+      window.clearTimeout(timer);
+      controller.abort();
+    };
+  }, [open, query, searchCategory]);
+
   const games = useMemo(() => {
-    const filtered = filterGames(items, { query, genre, decade });
-    return sortGames(filtered, sort);
-  }, [items, query, genre, decade, sort]);
+    const localItems = filterGames(items, { query, genre, decade });
+    const onlineItems = filterGames(remoteItems, { query, genre, decade });
+    const merged = new Map<string, FcGame>();
+
+    for (const game of [...localItems, ...onlineItems]) {
+      if (failedImageIds.has(game.id)) continue;
+      const key = `${game.titleZh.trim().toLocaleLowerCase('zh-CN')}|${game.year}`;
+      if (!merged.has(key)) merged.set(key, game);
+    }
+
+    return sortGames([...merged.values()], sort);
+  }, [items, remoteItems, failedImageIds, query, genre, decade, sort]);
 
   if (!open) return null;
 
@@ -120,18 +162,38 @@ export function GamePicker({
                 aria-label={isUnavailable ? `已选择 ${game.titleZh}` : `选择 ${game.titleZh}`}
               >
                 <span className="cover-frame" aria-hidden="true">
-                  <img className="cover-backdrop" src={game.imageUrl} alt="" loading="lazy" decoding="async" />
-                  <img className="cover-art" src={game.imageUrl} alt="" loading="lazy" decoding="async" />
+                  <img
+                    className="cover-backdrop"
+                    src={game.imageUrl}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    onError={() => setFailedImageIds((current) => new Set(current).add(game.id))}
+                  />
+                  <img
+                    className="cover-art"
+                    src={game.imageUrl}
+                    alt=""
+                    loading="lazy"
+                    decoding="async"
+                    onError={() => setFailedImageIds((current) => new Set(current).add(game.id))}
+                  />
                 </span>
                 <strong>{game.titleZh}</strong>
                 <span>
-                  {isUnavailable ? '已选择' : `${game.year} · ${game.publisher}`}
+                  {isUnavailable ? '已选择' : `${game.year || '年份未知'} · ${game.publisher}`}
                 </span>
               </button>
             );
           })}
         </div>
-        <p className="result-count">找到 {games.length} 个结果</p>
+        <p className="result-count">
+          {remoteStatus === 'loading'
+            ? '正在搜索更多结果…'
+            : remoteStatus === 'error'
+              ? `联网搜索暂不可用 · 已显示 ${games.length} 个结果`
+              : `找到 ${games.length} 个结果`}
+        </p>
       </section>
     </div>
   );

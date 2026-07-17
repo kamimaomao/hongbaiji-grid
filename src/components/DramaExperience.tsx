@@ -175,6 +175,7 @@ function CurrentDramaExperience({ headerSlot }: CurrentDramaExperienceProps) {
         items={dramaShows}
         title="选择一部剧"
         variant="drama"
+        searchCategory="drama"
         genreOptions={getGenreOptions(dramaShows)}
         decadeOptions={getDecadeOptions(dramaShows)}
         unavailableGameIds={unavailableIds}
