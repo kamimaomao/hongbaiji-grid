@@ -59,7 +59,8 @@ export function GamePicker({
 
   useEffect(() => {
     const trimmedQuery = query.trim();
-    if (!open || !searchCategory || trimmedQuery.length < 2) {
+    const canBrowseMusic = searchCategory === 'music' && (genre !== 'all' || decade !== 'all');
+    if (!open || !searchCategory || (trimmedQuery.length < 2 && !canBrowseMusic)) {
       setRemoteItems([]);
       setRemoteStatus('idle');
       return;
@@ -69,7 +70,7 @@ export function GamePicker({
     const timer = window.setTimeout(async () => {
       setRemoteStatus('loading');
       try {
-        setRemoteItems(await searchRemoteCatalog(searchCategory, trimmedQuery, controller.signal));
+        setRemoteItems(await searchRemoteCatalog(searchCategory, trimmedQuery, genre, decade, controller.signal));
         setRemoteStatus('success');
       } catch (error) {
         if (controller.signal.aborted) return;
@@ -82,7 +83,7 @@ export function GamePicker({
       window.clearTimeout(timer);
       controller.abort();
     };
-  }, [open, query, searchCategory]);
+  }, [open, query, genre, decade, searchCategory]);
 
   const games = useMemo(() => {
     const localItems = filterGames(items, { query, genre, decade });

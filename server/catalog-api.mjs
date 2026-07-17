@@ -8,6 +8,17 @@ const MUSICBRAINZ_SEARCH_URL = 'https://musicbrainz.org/ws/2/release-group/';
 const CACHE_TTL_MS = 15 * 60 * 1000;
 const RESULT_LIMIT = 24;
 
+const musicGenreTags = {
+  '华语': 'mandopop',
+  '嘻哈': 'hip hop',
+  '摇滚': 'rock',
+  '流行': 'pop',
+  '灵魂乐': 'soul',
+  '爵士': 'jazz',
+  '电子': 'electronic',
+  '独立': 'indie',
+};
+
 const searchCache = new Map();
 
 const bangumiTypeByCategory = {
@@ -131,7 +142,7 @@ const searchBangumi = async (category, query, origin) => {
     .slice(0, RESULT_LIMIT);
 };
 
-export const mapMusicBrainzReleaseGroup = (releaseGroup, coverUrl, origin) => {
+export const mapMusicBrainzReleaseGroup = (releaseGroup, coverUrl, origin, genre) => {
   const title = String(releaseGroup.title ?? '').trim();
   if (!title || !coverUrl) return null;
 
@@ -146,15 +157,28 @@ export const mapMusicBrainzReleaseGroup = (releaseGroup, coverUrl, origin) => {
     aliases: artists,
     year: getYear(releaseGroup['first-release-date']),
     publisher: artists.join('、') || 'MusicBrainz',
-    genre: String(releaseGroup['primary-type'] || '音乐'),
+    genre: String(genre || releaseGroup['primary-type'] || '音乐'),
     popularity: Number(releaseGroup.score ?? 0),
     imageUrl: imageProxyUrl(origin, coverUrl),
   };
 };
 
-const searchMusic = async (query, origin) => {
+const escapeMusicBrainzPhrase = (value) => String(value).replaceAll('\\', '\\\\').replaceAll('"', '\\"');
+
+export const buildMusicBrainzQuery = (query, genre, decade) => {
+  const clauses = ['primarytype:album'];
+  if (query) clauses.unshift(`releasegroup:"${escapeMusicBrainzPhrase(query)}"`);
+  if (musicGenreTags[genre]) clauses.push(`tag:"${musicGenreTags[genre]}"`);
+  if (/^\d{4}s$/.test(decade)) {
+    const startYear = Number.parseInt(decade, 10);
+    clauses.push(`firstreleasedate:[${startYear}-01-01 TO ${startYear + 9}-12-31]`);
+  }
+  return clauses.join(' AND ');
+};
+
+const searchMusic = async (query, genre, decade, origin) => {
   const url = new URL(MUSICBRAINZ_SEARCH_URL);
-  url.searchParams.set('query', query);
+  url.searchParams.set('query', buildMusicBrainzQuery(query, genre, decade));
   url.searchParams.set('fmt', 'json');
   url.searchParams.set('limit', String(RESULT_LIMIT));
 
@@ -180,22 +204,27 @@ const searchMusic = async (query, origin) => {
       item,
       `https://coverartarchive.org/release-group/${item.id}/front-500`,
       origin,
+      genre,
     ))
     .filter(Boolean)
     .slice(0, RESULT_LIMIT);
 };
 
-export const searchCatalog = async (category, query, origin) => {
+export const searchCatalog = async (category, query, genre, decade, origin) => {
   const trimmedQuery = String(query ?? '').trim().slice(0, 80);
-  if (trimmedQuery.length < 2) return [];
+  const trimmedGenre = String(genre ?? '').trim().slice(0, 30);
+  const trimmedDecade = String(decade ?? '').trim().slice(0, 5);
+  const canBrowseMusic = category === 'music'
+    && (musicGenreTags[trimmedGenre] || /^\d{4}s$/.test(trimmedDecade));
+  if (trimmedQuery.length < 2 && !canBrowseMusic) return [];
   if (category !== 'music' && !(category in bangumiTypeByCategory)) return [];
 
-  const cacheKey = `${origin}|${category}|${normalize(trimmedQuery)}`;
+  const cacheKey = `${origin}|${category}|${normalize(trimmedQuery)}|${normalize(trimmedGenre)}|${trimmedDecade}`;
   const cached = searchCache.get(cacheKey);
   if (cached && cached.expiresAt > Date.now()) return cached.items;
 
   const items = category === 'music'
-    ? await searchMusic(trimmedQuery, origin)
+    ? await searchMusic(trimmedQuery, trimmedGenre, trimmedDecade, origin)
     : await searchBangumi(category, trimmedQuery, origin);
 
   searchCache.set(cacheKey, { expiresAt: Date.now() + CACHE_TTL_MS, items });
@@ -266,6 +295,8 @@ export const handleCatalogApi = async (request, response) => {
       const items = await searchCatalog(
         url.searchParams.get('category') ?? '',
         url.searchParams.get('q') ?? '',
+        url.searchParams.get('genre') ?? '',
+        url.searchParams.get('decade') ?? '',
         requestOrigin(request),
       );
       json(response, 200, { items });

@@ -21,11 +21,15 @@ const isCatalogItem = (value: unknown): value is CatalogItem => {
 export async function searchRemoteCatalog(
   category: RemoteCatalogCategory,
   query: string,
+  genre: string,
+  decade: string,
   signal?: AbortSignal,
 ) {
   const url = new URL(`${getApiOrigin()}/api/catalog/search`, window.location.origin);
   url.searchParams.set('category', category);
   url.searchParams.set('q', query.trim());
+  if (genre !== 'all') url.searchParams.set('genre', genre);
+  if (decade !== 'all') url.searchParams.set('decade', decade);
 
   const response = await fetch(url, { signal });
   if (!response.ok) throw new Error(`Remote catalog search failed: ${response.status}`);

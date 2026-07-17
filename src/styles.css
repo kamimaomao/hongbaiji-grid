@@ -605,10 +605,10 @@ footer {
 .modal-backdrop {
   position: fixed;
   inset: 0;
-  z-index: 20;
+  z-index: 100;
   display: flex;
   align-items: flex-end;
-  background: rgba(0, 0, 0, 0.32);
+  background: rgba(0, 0, 0, 0.58);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
 }
@@ -621,6 +621,7 @@ footer {
   border-radius: 28px 28px 0 0;
   padding: 0 18px calc(20px + env(safe-area-inset-bottom));
   background: var(--sheet);
+  color: var(--text);
   box-shadow: var(--shadow-float);
   overscroll-behavior: contain;
 }
@@ -726,8 +727,9 @@ footer {
 
 .game-list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(136px, 160px));
   gap: 12px;
+  justify-content: start;
   margin-top: 18px;
 }
 
@@ -816,7 +818,7 @@ footer span:first-child {
 
 @media (min-width: 720px) {
   .game-list {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(150px, 160px));
     gap: 14px;
   }
 

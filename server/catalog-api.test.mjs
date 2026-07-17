@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  buildMusicBrainzQuery,
   mapBangumiSubject,
   mapMusicBrainzReleaseGroup,
   matchesBangumiCategory,
@@ -49,5 +50,12 @@ describe('catalog API mappings', () => {
     }, 'https://coverartarchive.org/release-group/album-id/front-500', 'https://example.test');
     expect(album?.publisher).toBe('The Beatles');
     expect(album?.imageUrl).toContain('https://example.test/api/catalog/image?url=');
+  });
+
+  it('builds album discovery queries from the selected music genre', () => {
+    expect(buildMusicBrainzQuery('', '电子', 'all')).toBe('primarytype:album AND tag:"electronic"');
+    expect(buildMusicBrainzQuery('Discovery', '电子', '2000s')).toBe(
+      'releasegroup:"Discovery" AND primarytype:album AND tag:"electronic" AND firstreleasedate:[2000-01-01 TO 2009-12-31]',
+    );
   });
 });
