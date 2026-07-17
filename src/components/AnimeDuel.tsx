@@ -1,7 +1,8 @@
 import { ArrowCounterClockwise, ArrowsClockwise, Crown, DownloadSimple } from '@phosphor-icons/react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { duelAnime } from '../data/experiences';
 import { generateDuelPosterDataUrl } from '../lib/poster';
+import { searchRemoteCatalog } from '../lib/remoteCatalog';
 import type { CatalogItem } from '../types';
 import { PosterModal } from './PosterModal';
 
@@ -19,8 +20,8 @@ interface DuelState {
   champion: CatalogItem | null;
 }
 
-const createDuelState = (): DuelState => ({
-  queue: duelAnime.slice(0, 16),
+const createDuelState = (items: CatalogItem[] = duelAnime): DuelState => ({
+  queue: items.slice(0, 16),
   winners: [],
   eliminated: [],
   round: 1,
@@ -30,10 +31,25 @@ const createDuelState = (): DuelState => ({
 
 export function AnimeDuel() {
   const [state, setState] = useState<DuelState>(createDuelState);
+  const [animePool, setAnimePool] = useState<CatalogItem[]>(duelAnime);
   const [history, setHistory] = useState<DuelState[]>([]);
   const [signature, setSignature] = useState('阿哲');
   const [imageUrl, setImageUrl] = useState<string | null>(null);
   const [isGenerating, setIsGenerating] = useState(false);
+  const hasInteracted = useRef(false);
+
+  useEffect(() => {
+    const controller = new AbortController();
+    void searchRemoteCatalog('anime', '', 'all', 'all', controller.signal)
+      .then((items) => {
+        if (items.length < 16) return;
+        const providerPool = items.slice(0, 16);
+        setAnimePool(providerPool);
+        if (!hasInteracted.current) setState(createDuelState(providerPool));
+      })
+      .catch(() => undefined);
+    return () => controller.abort();
+  }, []);
 
   const left = state.queue[0] ?? null;
   const right = state.queue[1] ?? null;
@@ -47,6 +63,7 @@ export function AnimeDuel() {
 
   const choose = (winner: CatalogItem, loser: CatalogItem) => {
     if (state.champion) return;
+    hasInteracted.current = true;
     setHistory((current) => [...current, state]);
     setImageUrl(null);
 
@@ -88,7 +105,8 @@ export function AnimeDuel() {
   };
 
   const restart = () => {
-    setState(createDuelState());
+    hasInteracted.current = false;
+    setState(createDuelState(animePool));
     setHistory([]);
     setImageUrl(null);
   };

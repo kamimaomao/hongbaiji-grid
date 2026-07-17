@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import {
+  buildBangumiSearchPayload,
   buildMusicBrainzQuery,
   mapBangumiSubject,
   mapMusicBrainzReleaseGroup,
@@ -57,5 +58,34 @@ describe('catalog API mappings', () => {
     expect(buildMusicBrainzQuery('Discovery', '电子', '2000s')).toBe(
       'releasegroup:"Discovery" AND primarytype:album AND tag:"electronic" AND firstreleasedate:[2000-01-01 TO 2009-12-31]',
     );
+  });
+
+  it('builds database filters for category, genre and decade browsing', () => {
+    expect(buildBangumiSearchPayload('movie', '', '剧情', '2020s')).toEqual({
+      keyword: '',
+      sort: 'heat',
+      filter: {
+        type: [6],
+        nsfw: false,
+        meta_tags: ['电影'],
+        tag: ['剧情'],
+        air_date: ['>=2020-01-01', '<2030-01-01'],
+      },
+    });
+    expect(buildBangumiSearchPayload('drama', '难哄', '都市爱情', 'all')).toEqual({
+      keyword: '难哄',
+      sort: 'match',
+      filter: {
+        type: [6],
+        nsfw: false,
+        meta_tags: ['电视剧'],
+        tag: ['爱情'],
+      },
+    });
+  });
+
+  it('keeps the selected product genre on provider results', () => {
+    expect(mapBangumiSubject(makeSubject(), 'drama', 'https://example.test', '都市爱情')?.genre)
+      .toBe('都市爱情');
   });
 });

@@ -59,16 +59,15 @@ export function GamePicker({
 
   useEffect(() => {
     const trimmedQuery = query.trim();
-    const canBrowseMusic = searchCategory === 'music' && (genre !== 'all' || decade !== 'all');
-    if (!open || !searchCategory || (trimmedQuery.length < 2 && !canBrowseMusic)) {
+    if (!open || !searchCategory) {
       setRemoteItems([]);
       setRemoteStatus('idle');
       return;
     }
 
     const controller = new AbortController();
+    setRemoteStatus('loading');
     const timer = window.setTimeout(async () => {
-      setRemoteStatus('loading');
       try {
         setRemoteItems(await searchRemoteCatalog(searchCategory, trimmedQuery, genre, decade, controller.signal));
         setRemoteStatus('success');
@@ -86,18 +85,20 @@ export function GamePicker({
   }, [open, query, genre, decade, searchCategory]);
 
   const games = useMemo(() => {
-    const localItems = filterGames(items, { query, genre, decade });
-    const onlineItems = filterGames(remoteItems, { query, genre, decade });
+    const sourceItems = remoteStatus === 'success' ? remoteItems : items;
+    const filteredItems = filterGames(sourceItems, { query, genre, decade });
     const merged = new Map<string, FcGame>();
 
-    for (const game of [...localItems, ...onlineItems]) {
+    for (const game of filteredItems) {
       if (failedImageIds.has(game.id)) continue;
       const key = `${game.titleZh.trim().toLocaleLowerCase('zh-CN')}|${game.year}`;
       if (!merged.has(key)) merged.set(key, game);
     }
 
     return sortGames([...merged.values()], sort);
-  }, [items, remoteItems, failedImageIds, query, genre, decade, sort]);
+  }, [items, remoteItems, remoteStatus, failedImageIds, query, genre, decade, sort]);
+
+  const sourceLabel = searchCategory === 'music' ? 'MusicBrainz' : 'Bangumi';
 
   if (!open) return null;
 
@@ -190,10 +191,12 @@ export function GamePicker({
         </div>
         <p className="result-count">
           {remoteStatus === 'loading'
-            ? '正在搜索更多结果…'
+            ? `正在从 ${sourceLabel} 加载…`
             : remoteStatus === 'error'
-              ? `联网搜索暂不可用 · 已显示 ${games.length} 个结果`
-              : `找到 ${games.length} 个结果`}
+              ? `数据源暂不可用 · 已显示 ${games.length} 个本地备用结果`
+              : remoteStatus === 'success'
+                ? `${sourceLabel} · 找到 ${games.length} 个结果`
+                : `找到 ${games.length} 个结果`}
         </p>
       </section>
     </div>

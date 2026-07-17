@@ -31,7 +31,7 @@ afterEach(() => {
 });
 
 describe('GamePicker remote catalog search', () => {
-  it('adds online results after the user enters a title', async () => {
+  it('loads provider results as soon as the picker opens', async () => {
     const fetchMock = vi.fn().mockResolvedValue({
       ok: true,
       json: async () => ({ items: [onlineItem] }),
@@ -53,11 +53,10 @@ describe('GamePicker remote catalog search', () => {
       />,
     );
 
-    fireEvent.change(screen.getByRole('textbox', { name: '搜索名称或别名' }), { target: { value: '难哄' } });
-
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1), { timeout: 1500 });
+    expect(String(fetchMock.mock.calls[0]?.[0])).toContain('category=drama');
     expect(await screen.findByRole('button', { name: '选择 难哄' })).toBeInTheDocument();
-    expect(screen.getByText('找到 1 个结果')).toBeInTheDocument();
+    expect(screen.getByText('Bangumi · 找到 1 个结果')).toBeInTheDocument();
   });
 
   it('removes online results whose cover cannot be loaded', async () => {
@@ -81,12 +80,11 @@ describe('GamePicker remote catalog search', () => {
       />,
     );
 
-    fireEvent.change(screen.getByRole('textbox', { name: '搜索名称或别名' }), { target: { value: '难哄' } });
     await screen.findByRole('button', { name: '选择 难哄' });
     fireEvent.error(container.querySelector('.game-card img') as HTMLImageElement);
 
     await waitFor(() => expect(screen.queryByRole('button', { name: '选择 难哄' })).not.toBeInTheDocument());
-    expect(screen.getByText('找到 0 个结果')).toBeInTheDocument();
+    expect(screen.getByText('Bangumi · 找到 0 个结果')).toBeInTheDocument();
   });
 
   it('browses the online music catalog when a genre is selected', async () => {
@@ -111,6 +109,8 @@ describe('GamePicker remote catalog search', () => {
       />,
     );
 
+    await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1), { timeout: 1500 });
+    fetchMock.mockClear();
     fireEvent.change(screen.getByRole('combobox', { name: '类型' }), { target: { value: '电子' } });
 
     await waitFor(() => expect(fetchMock).toHaveBeenCalledTimes(1), { timeout: 1500 });

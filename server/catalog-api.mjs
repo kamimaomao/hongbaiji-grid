@@ -32,6 +32,29 @@ const bangumiTypeByCategory = {
   boardgame: 4,
 };
 
+const bangumiMetaTagsByCategory = {
+  movie: ['电影'],
+  drama: ['电视剧'],
+  'classic-drama': ['电视剧'],
+  fc: ['FC'],
+  pc: ['PC'],
+  boardgame: ['桌游'],
+};
+
+const bangumiGenreTags = {
+  '都市爱情': '爱情',
+  '偶像爱情': '爱情',
+  '青春爱情': '爱情',
+  '偶像喜剧': '喜剧',
+  '动作冒险': '冒险',
+  '合作冒险': '冒险',
+  '动作角色扮演': '角色扮演',
+  '策略角色扮演': '角色扮演',
+  '平台动作': '动作',
+  '潜入动作': '动作',
+  '即时战略': '策略',
+};
+
 const consoleTags = new Set([
   '3DS', 'DC', 'FC', 'GB', 'GBA', 'GBC', 'GC', 'MD', 'N64', 'NDS', 'NGC', 'NS',
   'PS', 'PS2', 'PS3', 'PS4', 'PS5', 'PSP', 'PSV', 'SATURN', 'SFC', 'WII', 'WII U',
@@ -90,7 +113,7 @@ export const matchesBangumiCategory = (subject, category) => {
   return false;
 };
 
-export const mapBangumiSubject = (subject, category, origin) => {
+export const mapBangumiSubject = (subject, category, origin, selectedGenre = '') => {
   const image = subject.images?.large ?? subject.image ?? '';
   if (!image) return null;
 
@@ -98,9 +121,13 @@ export const mapBangumiSubject = (subject, category, origin) => {
   const titleOriginal = String(subject.name || titleZh).trim();
   if (!titleZh) return null;
 
-  const genre = (Array.isArray(subject.meta_tags) ? subject.meta_tags : [])
-    .find((tag) => !ignoredGenreTags.has(String(tag).toUpperCase())) ?? '未分类';
-  const popularity = Number(subject.collection?.total ?? 0) + Number(subject.rating?.total ?? 0);
+  const genre = selectedGenre || (
+    (Array.isArray(subject.meta_tags) ? subject.meta_tags : [])
+      .find((tag) => !ignoredGenreTags.has(String(tag).toUpperCase())) ?? '未分类'
+  );
+  const collectionTotal = Object.values(subject.collection ?? {})
+    .reduce((total, value) => total + Number(value ?? 0), 0);
+  const popularity = collectionTotal + Number(subject.rating?.total ?? 0);
 
   return {
     id: `${category}-bgm-${subject.id}`,
@@ -115,7 +142,28 @@ export const mapBangumiSubject = (subject, category, origin) => {
   };
 };
 
-const searchBangumi = async (category, query, origin) => {
+export const buildBangumiSearchPayload = (category, query, genre, decade) => {
+  const filter = {
+    type: [bangumiTypeByCategory[category]],
+    nsfw: false,
+  };
+  const metaTags = bangumiMetaTagsByCategory[category];
+  if (metaTags) filter.meta_tags = metaTags;
+
+  if (genre) filter.tag = [bangumiGenreTags[genre] ?? genre];
+  if (/^\d{4}s$/.test(decade)) {
+    const startYear = Number.parseInt(decade, 10);
+    filter.air_date = [`>=${startYear}-01-01`, `<${startYear + 10}-01-01`];
+  }
+
+  return {
+    keyword: query,
+    sort: query ? 'match' : 'heat',
+    filter,
+  };
+};
+
+const searchBangumi = async (category, query, genre, decade, origin) => {
   const response = await fetch(BANGUMI_SEARCH_URL, {
     method: 'POST',
     headers: {
@@ -123,11 +171,7 @@ const searchBangumi = async (category, query, origin) => {
       'Content-Type': 'application/json',
       'User-Agent': APP_USER_AGENT,
     },
-    body: JSON.stringify({
-      keyword: query,
-      sort: 'match',
-      filter: { type: [bangumiTypeByCategory[category]] },
-    }),
+    body: JSON.stringify(buildBangumiSearchPayload(category, query, genre, decade)),
     signal: AbortSignal.timeout(8000),
   });
 
@@ -137,7 +181,7 @@ const searchBangumi = async (category, query, origin) => {
 
   return subjects
     .filter((subject) => matchesBangumiCategory(subject, category))
-    .map((subject) => mapBangumiSubject(subject, category, origin))
+    .map((subject) => mapBangumiSubject(subject, category, origin, genre))
     .filter(Boolean)
     .slice(0, RESULT_LIMIT);
 };
@@ -214,9 +258,6 @@ export const searchCatalog = async (category, query, genre, decade, origin) => {
   const trimmedQuery = String(query ?? '').trim().slice(0, 80);
   const trimmedGenre = String(genre ?? '').trim().slice(0, 30);
   const trimmedDecade = String(decade ?? '').trim().slice(0, 5);
-  const canBrowseMusic = category === 'music'
-    && (musicGenreTags[trimmedGenre] || /^\d{4}s$/.test(trimmedDecade));
-  if (trimmedQuery.length < 2 && !canBrowseMusic) return [];
   if (category !== 'music' && !(category in bangumiTypeByCategory)) return [];
 
   const cacheKey = `${origin}|${category}|${normalize(trimmedQuery)}|${normalize(trimmedGenre)}|${trimmedDecade}`;
@@ -225,7 +266,7 @@ export const searchCatalog = async (category, query, genre, decade, origin) => {
 
   const items = category === 'music'
     ? await searchMusic(trimmedQuery, trimmedGenre, trimmedDecade, origin)
-    : await searchBangumi(category, trimmedQuery, origin);
+    : await searchBangumi(category, trimmedQuery, trimmedGenre, trimmedDecade, origin);
 
   searchCache.set(cacheKey, { expiresAt: Date.now() + CACHE_TTL_MS, items });
   return items;
