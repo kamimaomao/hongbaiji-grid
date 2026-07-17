@@ -62,7 +62,15 @@ export const getGenreOptions = (items: FcGame[]): FilterOption[] =>
     .sort((a, b) => a.localeCompare(b, 'zh-CN'))
     .map((genre) => ({ value: genre, label: genre }));
 
-export const getDecadeOptions = (items: FcGame[]): FilterOption[] =>
-  Array.from(new Set(items.map((item) => toDecade(item.year))))
+export const getDecadeOptions = (items: FcGame[], throughYear?: number): FilterOption[] => {
+  const decades = new Set(items.map((item) => toDecade(item.year)));
+  if (decades.size > 0 && throughYear) {
+    const firstDecade = Math.min(...Array.from(decades).map((decade) => Number.parseInt(decade, 10)));
+    const lastDecade = Math.floor(throughYear / 10) * 10;
+    for (let decade = firstDecade; decade <= lastDecade; decade += 10) decades.add(`${decade}s`);
+  }
+
+  return Array.from(decades)
     .sort((a, b) => Number.parseInt(a, 10) - Number.parseInt(b, 10))
     .map((decade) => ({ value: decade, label: formatDecade(decade) }));
+};

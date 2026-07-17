@@ -122,7 +122,7 @@ export function MusicExperience() {
         variant="music"
         searchCategory="music"
         genreOptions={getGenreOptions(musicAlbums)}
-        decadeOptions={getDecadeOptions(musicAlbums)}
+        decadeOptions={getDecadeOptions(musicAlbums, new Date().getFullYear())}
         unavailableGameIds={unavailableIds}
         onClose={() => setActiveSlot(null)}
         onSelect={selectAlbum}
