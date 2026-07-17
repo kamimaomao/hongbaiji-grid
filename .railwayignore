@@ -1,0 +1,7 @@
+node_modules/
+dist/
+.superpowers/
+.worktrees/
+design-qa.md
+docs/design-references/
+qa-captures/
